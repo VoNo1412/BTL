@@ -1,0 +1,422 @@
+:root {
+    --primary-bg: #faf9f7;
+    --secondary-bg: rgba(230, 229, 228, 1);
+    --thirdhv-bg: rgba(0,0,0,0.2);
+    --color-heading: #8f5848;
+    --primary-color: rgba(0,0,0,0.6);
+    --secondary-color: rgba(178, 64, 32, 1);
+    --third-bg: #f1ece5;
+}
+
+.primary-bg {
+    background: var(--primary-bg);
+}
+
+.bg-blue {
+    background-color: #99c3e728;
+}
+
+img {
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.youlink {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 40%;
+    height: 378px;
+}
+
+.forward {
+    margin-left: 220px;
+}
+
+.join-now {
+    background-color: #fff;
+    transition: all .3s ease;
+    font-weight: 500;
+    color: gainsboro;
+}
+
+.join-now:hover {
+    background: rgba(128, 128, 128, 0.445);
+}
+
+.sign {
+    transition: all .3s ease;
+    font-weight: 500;
+}
+
+.sign:hover {
+    background-color: rgb(200, 200, 236);
+}
+
+.itemHover {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.itemHover:hover {
+    opacity: 1;
+}
+
+.hero {
+    overflow: hidden;
+}
+
+.px-lg-7 {
+    padding: 5rem;
+}
+
+.cs-shadow:hover {
+  box-shadow: 0 0 14px 4px rgba(0, 0, 0, 0.356);  
+}
+
+.rounded-4 {
+    border-radius: 8px;
+}
+
+.flexBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexBox1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.color-heading {
+    color: var(--color-heading);
+}
+
+.topics {
+    background: var(--primary-bg);
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.topics-items {
+    background-color: var(--secondary-bg);
+    margin: 12px 0;
+}
+
+.btn--primary {
+    padding: 12px 20px;
+    cursor: pointer;
+    display: inline-block;
+    transition: all .3s ease-in-out;
+}
+
+.topics-link {
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: capitalize;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.topics-items:hover {
+    text-decoration: underline;
+    background-color: var(--thirdhv-bg);
+}
+
+.topics-items:hover .topics-link {
+    color: var(--primary-color);
+}
+
+.topics-items-1 {
+    background: #fff;
+    border: 1px solid #000;
+}
+
+.show-more {
+    background-color: var(--secondary-bg);
+    color: #000;
+    display: inline-block;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+}
+
+.itemsNone {
+    opacity: 0;
+    display: none;
+    overflow: hidden;
+}
+
+.itemsShow {
+    opacity: 1;
+    display: inline-block;
+    overflow: visible;
+}
+
+.w-6 {
+    width: 60%;
+}
+
+.heading-lg {
+    font-size: 56px;
+    line-height: 64px;
+}
+
+.heading-md {
+    font-size: 46px;
+    line-height: 53px;
+    font-weight: 200;
+}
+
+.post {
+    background: var(--third-bg);
+}
+
+.post-btn {
+    border: 1px solid #000;
+    
+}
+
+.post-btn:hover {
+    background-color: var(--thirdhv-bg);
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.heading-third {
+    color: var(--secondary-color);
+}
+
+.fs-32 {
+    font-size: 32px;
+    line-height: 40px;
+    color:rgb(85, 84, 84);
+}
+
+.carousel {
+    height: 842px;
+}
+
+.slide_customer {
+    max-width: 95%;
+    margin: auto;
+}
+
+.carousel_heading {
+    font-size: 40px;
+    line-height: 1.25;
+    color: rgba(41, 119, 201, 1);
+}
+
+.carousel_heading, 
+.carousel_text {
+    max-width: 550px;
+}
+
+.carousel_slides {
+    display: flex;
+    position: relative;
+    transition: all .6s ease-in-out;
+}
+
+.carousel_item {
+    display: flex;
+    align-items: center;
+    min-width: 1450px;
+}
+
+.carousel_img {
+    max-width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#btnPrev, #btnNext {
+    position: relative;
+    top: -10px;
+    right: -900px;
+}
+
+.tags {
+    background: rgb(167, 161, 161);
+    padding: 4px 8px;
+    font-weight: 500;
+}
+
+.w-0 {
+    width: 2% !important;
+    background: rgb(202, 202, 202);
+}
+
+@media (min-width: 1280px) {
+    .driver {
+        position: relative;
+    }
+    
+    .driver::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        right: 0;
+        width: 1px;
+        height: 35px;
+        background-color: cornflowerblue;
+    }
+
+    .posRel {
+        position: relative;
+        right: 90px;
+        top: -30px;
+    }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .w-md-8 {
+        width: 80%;
+    }
+
+    .container {
+        max-width: 1024px;
+        padding: 0 1rem;
+    }
+
+    #hero-learning-home {
+        width: 650px;
+    }
+
+    .posRel {
+        right: -5px;
+    }
+
+    .carousel_left {
+        max-width: 500px;
+        padding-right: 20px;
+    }
+
+    #btnPrev, #btnNext {
+        right: -800px;
+    }
+}
+
+@media  (max-width: 1023px) {
+    .flexBox {
+        align-items: flex-start;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    .posRel {
+        right: 0;
+        text-align: center;
+    }
+
+    #hero-learning-home {
+        width: 360px;
+        height: 200px;
+        position: relative;
+        top: 0px;
+    }    
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        max-width: 1024px;
+        padding: 0 1rem;
+    }
+
+    .w-6 {
+        margin: 0 auto;
+    }
+
+    .carousel {
+        height: 600px;
+    }
+
+    .carousel_item {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        min-width: 390px;
+        padding-right: 20px;
+    }
+
+    .carousel_img {
+        max-width: 300px;
+        height: 300px;
+    }
+
+    #btnPrev, #btnNext {
+        right: -600px;
+    }
+    
+
+    .carousel_heading, .carousel_text {
+        max-width: 350px;
+    }
+
+    .carousel_heading  {
+        font-size: 24px;
+        padding: 10px 0;
+        min-height: 100px;
+    }
+
+    .carousel_text {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        overflow: visible;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .heading-lg {
+        font-size: 32px;
+        line-height: 50px;
+    }
+
+    .heading-md {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .w-sm-100 {
+        width: 100%;
+    }
+
+    .posRel {
+        top: -150px;
+    }
+
+    .topics-items {
+        padding: 5px 16px;
+    }
+}
