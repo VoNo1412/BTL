@@ -1,0 +1,34 @@
+.txtName {
+    text-decoration: none;
+    color: black;
+}
+
+.txtName:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.txtAddress {
+    max-width: 180px;
+}
+
+.txtTime {
+    padding: 10px 0 0 4px;
+}
+
+.active-job {
+    background: #e6f7ff;
+}
+
+.active-job:hover {
+    background: #e6f7ff !important;
+}
+
+.list-job {
+    cursor: pointer;
+    transition: all .1s ease-in;
+}
+
+.list-job:hover {
+    background: rgb(233, 230, 230);
+}
