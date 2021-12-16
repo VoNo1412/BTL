@@ -268,6 +268,53 @@ li {
     width: 2% !important;
     background: rgb(202, 202, 202);
 }
+.footer{
+    background-color:rgb(236, 246, 247);
+}
+.container-fluid .logo-footer .logo-text{
+    color: blueviolet;
+}
+.container-fluid .logo-footer .logo-in{
+    background-color: blue;
+    color: #fff;
+}
+.container-fluid .list-footer a{
+    text-decoration: none;
+    color: rgb(81, 113, 114);
+
+}
+.container-fluid .list-footer div a:hover{
+    cursor: pointer;
+    color: blueviolet;
+    text-decoration: underline;
+}
+.nav-footer{
+    display: flex;
+}
+.nav-footer li a{
+    text-decoration: none;
+}
+.nav-footer li{
+    list-style-type: none;
+}
+.sub-logo li{
+    font-size: 14px;
+    padding: 6px;
+}
+
+.sub-logo .logo-text {
+    color: #000;
+}
+.sub-logo .logo-in {
+ background-color: #000;
+ color: #fff;
+}
+@media screen and (min-width: 1025px){
+    .container-fluid {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+}
 
 @media (min-width: 1280px) {
     .driver {
