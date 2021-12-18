@@ -41,13 +41,42 @@
 
 .txtDetail {
     width: 101%;
-    /* height: 100px; */
+    position: relative;
+    max-height: 100px;
+    overflow: hidden;
+    margin: 20px 0 30px 20px;
 }
 
 .job-right {
-    height: 80vh; 
-    max-width: 600px; 
+    height: 81vh;
+}
+
+.txtMore {
+    max-height:fit-content;
+    overflow: visible;
+}
+
+.txtDetail::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    opacity: 0.8;
+    background: #fff;
+}
+
+.content {
+    max-width: 620px;
     overflow: scroll;
+    height: 80vh;
     position: fixed;
+    left: 47%;
     top: 150px;
+    transition: all .1s ease-in;
+}
+
+.show-more {
+    margin-bottom: 20px;
 }
