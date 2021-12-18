@@ -8,3 +8,13 @@
     -webkit-box-shadow: none;
     box-shadow: none;
   }
+.content-header .post input:hover {
+    background-color:aquamarine;
+}
+.function i{
+    padding-right: 12px;
+}
+.function .list-function div:hover {
+    background-color:aquamarine;
+    cursor: pointer;
+}
