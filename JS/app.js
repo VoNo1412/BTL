@@ -60,3 +60,6 @@ btnPrev.addEventListener('click', () => {
     btnNext.disabled = false;
     carouselSlide.style.transform = "translateX(" + (-size * index) + "px)";
 });
+
+
+
