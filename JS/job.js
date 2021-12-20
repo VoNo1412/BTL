@@ -22,7 +22,6 @@ lists.forEach(list => {
   })
 })
 
-
 function changeJob(img, heading, address, time) {
   let apply = document.querySelector(".apply");
   apply.getElementsByTagName("img")[0].src = img;
