@@ -3,7 +3,6 @@ let lists = document.querySelectorAll(".list-job");
 let showMore = document.querySelector(".show-more");
 let isShow = false;
 
-
 lists.forEach(list => {
   list.addEventListener("click", function () {
     removeActive();
@@ -14,7 +13,7 @@ lists.forEach(list => {
     let time = this.getElementsByClassName("txtTime")[0].textContent;
 
     changeJob(img, heading, address, time);
-    
+
     function removeActive() {
       lists.forEach(el => {
         el.classList.remove("active-job");
