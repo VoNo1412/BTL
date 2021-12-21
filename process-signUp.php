@@ -1,26 +1,37 @@
 <?php
     session_start();
 
-    if(!isset($_POST['txtBtnSignUp'])) {
-        header("location: signup.php");
-    }
+    if(isset($_POST['txtBtnSignUp'])) {
+        $email = $_POST['txtEmail'];
+        $pass = $_POST['txtPass'];
 
-    $email = $_POST['txtEmail'];
-    $pass = $_POST['txtPass'];
+        $conn = mysqli_connect("localhost", "root", "", "job");
+        if(!$conn) {
+            die("Connect failure");
+        }
+        $sql_1 = "SELECT * FROM db_user WHERE email_user = '$email'";
 
-    $conn = mysqli_connect("localhost", "root", "", "job");
-    if(!$conn) {
+        $result_1 = mysqli_query($conn, $sql_1);
 
-    }
-    $sql_1 = "SELECT * FROM db_user WHERE email_user = '$email' and pass_user = '$pass'";
+        if(mysqli_num_rows($result_1) > 0) {
+            $error = "Email da duoc su dung. Vui long dang ky email khac!";
+            header("location: signUp.php?error = $error");
+        } else {
 
-    $result_1 = mysqli_query($conn, $sql_1);
-
-    if(mysqli_num_rows($result_1) > 0) {
-        $error = "Email da duoc su dung. Vui long dang ky email khac!";
-        header("location: signup.php?error = $error");
+            $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
+            $sql_2 = "INSERT INTO db_user(email_user, pass_user)
+            VALUES('$email', '$pass_hash')";
+            $result_02 = mysqli_query($conn, $sql_2);
+            
+            if($result_02) {
+                $_SESSION['isLoginOk'] = $email;
+                header("location: signIn.php");
+            } else {
+                $error = "Có một số lỗi vui lòng đăng ký lại!";
+                header("location: signUp.php?error = $error");
+            }
+        }
     } else {
-        $_SESSION['isLoginOk'] = $email;
-        header("location: signIn.php");
+        header("location: signUp.php");
     }
 ?>
