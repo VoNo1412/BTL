@@ -17,7 +17,6 @@
             $error = "Email da duoc su dung. Vui long dang ky email khac!";
             header("location: signUp.php?error = $error");
         } else {
-
             $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
             $sql_2 = "INSERT INTO db_user(email_user, pass_user)
             VALUES('$email', '$pass_hash')";
@@ -30,6 +29,7 @@
                 $error = "Có một số lỗi vui lòng đăng ký lại!";
                 header("location: signUp.php?error = $error");
             }
+            mysqli_close($conn);
         }
     } else {
         header("location: signUp.php");

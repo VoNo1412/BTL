@@ -83,7 +83,7 @@
             <img src="./img/logo.png" alt="logo.png">
         </div>
         <div class="row">
-            <form action="process-signUp.php"  method="post" class="p-4 rounded-10" style="max-width: 352px; height:420px; margin: 50px auto 20px;">
+            <form action="process_signIn.php"  method="post" class="p-4 rounded-10" style="max-width: 352px; height:420px; margin: 50px auto 20px;">
                 <div class="mb-3">
                     <h3>Sign in</h3>
                     <span class="fs-14">Stay updated on your professional world</span> 
@@ -95,7 +95,12 @@
                     <input type="password" name="txtPass" class="form-control" placeholder="Password" id="exampleInputPassword1">
                 </div>
                 <div class="fw-bold text-blue pb-3">Forget password?</div>
-                <button type="submit" name="txtBtnSignUp"class="btn--primary fw-bold text-white mt-3">Sign In</button>
+                <?php
+                    if(isset($_GET['error'])) {
+                        echo "<div class='text-danger'>{$_GET['error']}</div>";
+                    }
+                ?>
+                <button type="submit" name="txtBtnSignIn"class="btn--primary fw-bold text-white mt-3">Sign In</button>
             </form>
 
             <div class="mt-3 text-center">New to LinkedIn? <a href="signin.html" class="fw-bold">Join now</a></div>
