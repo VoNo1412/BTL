@@ -1,10 +1,3 @@
-<?php 
-    if(!isset($_SESSION['isLoginOk'])) {
-        header("location: signup.php");
-    }
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,8 +95,13 @@
                 <span class="text-blue fw-bold">User Agreement, Privacy Policy,</span> and 
                 <span class="text-blue fw-bold">Cookie Policy.</span>
             </div>
+            <?php 
+                if(isset($_GET['error'])) {
+                    echo "<div class='text-danger'>{$_GET['error']}</div>";
+                }
+            ?>
             <button type="submit" name="txtBtnSignUp"class="btn--primary fw-bold text-white">Agree & Join</button>
-            <div class="mt-5 text-center">Already on LinkedIn? <a href="signin.html" class="fw-bold">Sign in</a></div>
+            <div class="mt-5 text-center">Already on LinkedIn? <a href="signin.php" class="fw-bold">Sign in</a></div>
             </form>
 
             <div class="text-center fs-14">Looking to create a page for a business? <span class="fw-bold text-primary">Get help</span></div>

@@ -316,10 +316,10 @@ li {
 
 
 @media screen and (min-width: 1025px){
-    .container-fluid {
+    /* .container-fluid {
         padding-left: 200px;
         padding-right: 200px;
-    }
+    } */
 }
 
 .search-job {
