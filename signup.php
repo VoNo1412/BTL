@@ -1,3 +1,10 @@
+<?php 
+    if(!isset($_SESSION['isLoginOk'])) {
+        header("location: signup.php");
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +14,12 @@
     <title>Sign Up | Linkedln</title>
     <link rel="stylesheet" href="./CSS/bootstrap.css">
     <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
     <style>
+        .bg--primary {
+            background: #f3f2ef;
+            height: 100vh;
+        }
 
         .rounded-10 {
             border-radius: 8px;
@@ -43,6 +55,7 @@
             line-height: 48px;
             text-align: center;
             text-decoration: none;
+            cursor: pointer;
         }
 
         .sign:hover {
@@ -54,36 +67,46 @@
             height: 48px;
             background-color: #0a66c2;
             border-radius: 24px;
+            border: 1px solid transparent;
         }
 
         .btn--primary:hover {
             background: #1f4182;
         }
+
+        form {
+            background: white;
+        }
     </style>
 </head>
 <body>
-    <div class="app">
-        <div class="container">
-           <div class="row text-center mt-4">
-            <div class="logo">
-                <img src="./img/logo.png" alt="logo.png">
+    <div class="container-fluid bg--primary">
+        <div class="row pt-5">
+             <div class="text-center">
+                <div class="logo">
+                        <img src="./img/logo.png" alt="logo.png">
+                    </div>
+                <div class="fs-2 text-medium">Make the most of your professional life</div>
+             </div>
+
+            <form action="process-signUp.php"  method="post" class="p-4 rounded-10" style="max-width: 400px; height:440px; margin: 50px auto 20px;">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-gray fs-14">Email</label>
+                <input type="email" name="txtEmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
-            <div class="fs-2 text-medium">Make the most of your professional life</div>
-           </div>
-           <form action="process-signUp.php" method="post" class="border p-4 rounded-10" style="max-width: 400px; height:440px; margin: 50px auto;">
-               <div class="email text-gray fs-14">Email</div>
-               <input type="email" required name="txtEmail" id="email" class="w-100 rounded-3 px-2">
-               <div class="password mt-3 text-gray fs-14">Password (6 or more characters)</div>
-               <input type="password" required name="txtPass" id="email" class="w-100 rounded-3 px-2">
-               <div class="fs-12 text-gray text-center py-3">By clicking Agree & Join, you agree to the LinkedIn
-                    <span class="text-blue fw-bold">User Agreement, Privacy Policy,</span> and 
-                    <span class="text-blue fw-bold">Cookie Policy.</span>
-               </div>
-               <div class="btn--primary">
-                   <div  class="sign" name="btnSignUp">Agree & Join</div>
-                </div>
-               <div class="mt-5 text-center">Already on LinkedIn? <a href="signin.html" class="fw-bold">Sign in</a></div>
-           </form>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label text-gray fs-14">Password (6 or more characters)</label>
+                <input type="password" name="txtPass" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="fs-12 text-gray text-center py-3">By clicking Agree & Join, you agree to the LinkedIn
+                <span class="text-blue fw-bold">User Agreement, Privacy Policy,</span> and 
+                <span class="text-blue fw-bold">Cookie Policy.</span>
+            </div>
+            <button type="submit" name="txtBtnSignUp"class="btn--primary fw-bold text-white">Agree & Join</button>
+            <div class="mt-5 text-center">Already on LinkedIn? <a href="signin.html" class="fw-bold">Sign in</a></div>
+            </form>
+
+            <div class="text-center fs-14">Looking to create a page for a business? <span class="fw-bold text-primary">Get help</span></div>
         </div>
     </div>
 </body>
