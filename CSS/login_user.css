@@ -9,7 +9,12 @@
     box-shadow: none;
   }
 .content-header .post input:hover {
-    background-color:aquamarine;
+    background-color:#ebebeb;
+}
+
+.content-header .post input:focus,
+.content-header .post input:active {
+    outline: none;
 }
 .function i{
     padding-right: 12px;
