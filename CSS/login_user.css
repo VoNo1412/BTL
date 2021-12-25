@@ -148,6 +148,13 @@ textarea::placeholder {
     z-index: 1;
 }
 
+.content-header {
+    border: 1px solid gainsboro;  
+    background-color: #fff; 
+    overflow: hidden;
+    border-radius: 10px; 
+}
+
 #loading-bar-spinner.spinner {
     left: 50%;
     margin-left: -20px;
