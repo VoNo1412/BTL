@@ -43,24 +43,28 @@
                 Messaging</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " aria-current="page" href="#"><i class="bi bi-bell-fill"></i> <br>
+              <a class="nav-link" aria-current="page" href="#"><i class="bi bi-bell-fill"></i> <br>
                 Notefications</a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link dropdown-toggle border-end border-secondary" style="padding-bottom: 0;" href="#"
-                role="button" data-bs-toggle="MY" aria-expanded="false">
+
+
+
+            <li class=" nav-item dropdown show-profile" style="position: relative;">
+              <a class="nav-link dropdown-toggle border-end border-secondary "href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-person-circle"></i> <br> My
               </a>
-
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <ul class="profile-user" style="position: absolute; background-color: #FFF;" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">Action</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
             </li>
+
+
+
+
+
+
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="MY" aria-expanded="false"
               style="text-align: center;">
               <i class="bi bi-table"></i> <br> Work
@@ -158,6 +162,26 @@
     </div>
   </div>
   </div>
+
+
+  <script>
+
+    const ShowProfile = document.querySelector('.show-profile')
+    const ShowInfo = document.querySelector('.profile-user')
+    const HideProfile = document.querySelector('.hide-profile')
+
+     function Show() {
+      ShowInfo.classList.add('show')
+     }
+     function Hide() {
+      ShowInfo.classList.remove('show')
+     }
+    ShowProfile.addEventListener('click',Show)
+    HideProfile.addEventListener('click',Hide)
+
+  </script>
+
+
   <script src="./JS/app.js"></script>
   <script src="./JS/bootstrap.bundle.min.js"></script>
 </body>
