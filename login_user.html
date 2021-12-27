@@ -41,8 +41,8 @@
             </div>
 
             <textarea class="form-control px-0 py-2 flex-grow-1"
-              placeholder="What do you want to talk about?" style="border: none;"></textarea>
-
+              placeholder="What do you want to talk about?" style="border: none;"
+              id="txtContent"></textarea>
           </div>
           <div class=" d-flex py-1 align-items-center justify-content-between">
             <ul class="list-create mb-0 ps-0">
@@ -60,7 +60,7 @@
               </li>
             </ul>
 
-            <button type="button" class="btn  border rounded-pill">
+            <button type="button" class="btn  btn-post border rounded-pill">
               post
             </button>
           </div>
@@ -123,9 +123,7 @@
             href="https://www.linkedin.com/premium/survey/?destRedirectURL=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F%3FshowPremiumWelcomeBanner%3Dtrue&upsellOrderOrigin=premium_nav_upsell_text">Try
             Premium for free</a>
         </ul>
-
       </div>
-
     </nav>
 
     <div class="container">
@@ -174,11 +172,10 @@
           <div class="content-header bg-light"
             style="border: 1px solid gainsboro;  border-radius: 10px; overflow: hidden; height: 116px;">
             <div class="post d-flex bg-light" style="align-items: center; padding: 12px 0 6px 0; ">
-              <img class="rounded-circle ms-3"
-                style="width: 46px; height: 46px; transform: translateY();" src="./img/img1.jpeg"
-                alt="">
-              <input class="ps-3 flex-grow-1" id="status" type="text" placeholder="Start a post"
-                style="margin:0 20px;border: 1px solid gainsboro; height: 48px; border-radius: 30px; cursor: pointer;"
+              <img class="rounded-circle ms-3" style="width: 46px; height: 46px;"
+                src="./img/img1.jpeg" alt="">
+              <input class="ps-3 flex-grow-1 status" type="text" placeholder="Start a post"
+                style="margin:0 10px;border: 1px solid gainsboro; height: 48px; border-radius: 30px; cursor: pointer;"
                 readonly>
             </div>
 
@@ -200,6 +197,11 @@
             </div>
           </div>
 
+          <hr>
+
+          <div class="posted-content" style="height: max-content; ">
+            
+          </div>
         </div>
 
         <div class="col-md-3">
