@@ -67,6 +67,29 @@
         </div>
       </form>
     </div>
+
+    <div class="create-post" style="display: block">
+      <form action="" class="px-3 pb-2 h-100">
+        <div class="create-content h-100">
+          <div class="create-title py-3 h5 d-flex">Edit your photo
+            <div class="ms-auto Close text-black cursor-pointer"><i class="bi bi-x-lg"></i></div>
+          </div>
+          <div class="create-status pt-2">
+             
+          </div>
+          <hr>
+          <div class=" d-flex py-1 align-items-center justify-content-between">
+            <button type="button" class="btn ms-auto me-2 border-primary text-primary btn-cancel border rounded-pill">
+              Cancel
+            </button>
+            <button type="button" class="btn  btn-post border rounded-pill">
+              Done
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
     <div class="overflow" style="display: none;"></div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light"
       style="height: 52px; padding:0 220px;">
@@ -99,13 +122,12 @@
             <a class="nav-link " aria-current="page" href="#"><i class="bi bi-bell-fill"></i> <br>
               Notefications</a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link dropdown-toggle border-end border-secondary"
-              style="padding-bottom: 0;" href="#" role="button" data-bs-toggle="MY"
-              aria-expanded="false">
-              <i class="bi bi-person-circle"></i> <br> My
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i> <br> My
             </a>
-
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -182,7 +204,7 @@
             <div class="function">
               <div class="list-function row"
                 style="color: darkgrey; justify-content: space-around;">
-                <div class="col-md-2 p-2 text-center">
+                <div class="col-md-2 p-2 text-center btnPhoto">
                   <i class="bi bi-image" style="color: dodgerblue; "></i>Photo
                 </div>
                 <div class="col-md-2 p-2 text-center">

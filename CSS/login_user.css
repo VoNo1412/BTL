@@ -70,6 +70,10 @@
     cursor: pointer;
 }
 
+.btnLike {
+    cursor: pointer;
+}
+
 .create-name, 
 .create-name1 {
     font-weight: 500;
