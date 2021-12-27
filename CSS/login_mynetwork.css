@@ -19,12 +19,7 @@ width: 100%;
 height: 100%;
 display: block
 }
-.profile-user{
-    list-style-type: none;
-    right: 0;
-    padding: 12px;
-    display: none;
-}
+
 .profile-user.show{
     display: inline-block;
 }
