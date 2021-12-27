@@ -24,33 +24,39 @@ class Post {
 
 
 contaienrFluid.addEventListener("click", (e) => {
-    handlyStatus(e);
+    handlyStatus(e.target);
     handlyPost();
 });
 
-function handlyStatus(e) {
-    if (e.target.classList.contains("status")) {
+function handlyStatus(eventS) {
+    if (eventS.classList.contains("status")) {
         creatPost.style.display = "block";
         overflow.style.display = "block";
-    } else if (e.target.className == "overflow" || e.target.parentElement.classList.contains("Close") || e.target.classList.contains("btn-post")) {
+    } else if (eventS.className == "overflow" || eventS.parentElement.classList.contains("Close") || eventS.classList.contains("btn-post")) {
         creatPost.style.display = "none";
         overflow.style.display = "none";
     }
 }
 
 function handlyPost() {
-    txtContent.addEventListener("keydown", function (e) {
-        if (e.key !== "") {
+    txtContent.addEventListener("keydown",  e => {
+        if(e.target.value !== "") {
+    
             btnPost.classList.add("bg-primary", "fw-bold", "text-white");
+        } else {
+            btnPost.classList.remove("bg-primary", "fw-bold", "text-white");
+    
         }
-    })
+    });
 }
 
 function loading() {
     const loading = document.createElement("div");
     loading.classList = `loading`;
     loading.innerHTML = `
-    <div id="loading-bar-spinner" class="spinner"><div class="spinner-icon"></div></div>
+    <div id="loading-bar-spinner" class="spinner">
+        <div class="spinner-icon"></div>
+    </div>
    `;
 
     postEl.appendChild(loading);
@@ -131,7 +137,7 @@ function loadingPost() {
     
     setTimeout(() => {
         postEl.appendChild(itemPost);
-        document.querySelector("#txtContent").value = "";
+        txtContent.value = "";
     }, 800);
 }
 
