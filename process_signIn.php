@@ -9,33 +9,23 @@
             die("Connect failure");
         }
 
-        $sql = "SELECT * FROM db_user WHERE email_user = ? OR name_user = ?";
-        $stmt = mysqli_prepare($conn, $sql);
-        $user = $email;
-        mysqli_stmt_bind_param($stmt, "ss", $email, $user);
-        
+        $sql = "SELECT * FROM db_user WHERE email_user = '$email'";
+        $result = mysqli_query($conn, $sql);
 
-        if(mysqli_stmt_excute($stmt)) {
-            mysqli_stmt_bind_result($stmt, $id_user, $name_user,$email_user, $passworkd_user);
-            
-            if(mysqli_stmt_fetch($stmt)) {
-                if(password_verify($pass, $passworkd_user)) {
-                    // $_SESSION['isLoginOk'] = $email;
-                    // header("location: signUp.php");
-                } else {
-                    $error = "Bạn đăng nhập sai or mật khẩu không chính xác!";
-                    header("location: signIn.php?error=$error");
-                }
-            } else {
-                $error = "Bạn đăng nhập sai or mật khẩu không chính xác!";
-                header("location: signIn.php?error=$error");
+
+        if(mysqli_num_rows($result) > 0) {
+            $data = mysqli_fetch_assoc($result);
+            if(password_verify($pass, $data['password_user'])) {
+                $_SESSION['isLoginOk'] = $email;
+                header("location: login_user.php");
             }
-        } else{
-            $error = "Bạn nhập thông tin Email hoặc mật khẩu chưa chính xác";
-            header("location: login.php?error=$error"); //Chuyển hướng, hiển thị thông báo lỗi
+        } else  {
+            $error = "failure";
+            header("location: signIn.php?error=$error");
         }
     } else {
         header("location: signIn.php");
     }
 
+    mysqli_close($conn);
 ?>

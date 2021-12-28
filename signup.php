@@ -86,10 +86,12 @@
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label text-gray fs-14">Email</label>
                 <input type="email" name="txtEmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted"></small>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label text-gray fs-14">Password (6 or more characters)</label>
                 <input type="password" name="txtPass" class="form-control" id="exampleInputPassword1">
+                <small id="emailHelp" class="form-text text-muted"></small>
             </div>
             <div class="fs-12 text-gray text-center py-3">By clicking Agree & Join, you agree to the LinkedIn
                 <span class="text-blue fw-bold">User Agreement, Privacy Policy,</span> and 

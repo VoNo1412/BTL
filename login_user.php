@@ -68,17 +68,14 @@
       </form>
     </div>
 
-     <?php if(isset($_GET['error']))  echo "<div class='text-danger'>{$_GET['error']}</div>"; ?>
-
-    <div class="create-post" style="display: block">
-      <form  action="upload.php" method="post" enctype="multipart/form-data" class="px-3 pb-2">
-        <div class="create-content h-100">
+    <!-- <div class="create-post" style="display: block; height: auto;">
+      <form  action="upload.php" method="post" enctype="multipart/form-data" class="px-3 pb-2 h-100">
+        <div class="create-content justify-content-space-between h-100" >
           <div class="create-title py-3 h5 d-flex">Edit your photo
             <div class="ms-auto Close text-black cursor-pointer"><i class="bi bi-x-lg"></i></div>
           </div>
-          <div class="create-status pt-2">
-            Select Image File to Upload:
-            <input type="file" name="file"  value="Upload">
+          <div class="create-status align-items-center justify-content-center pt-2">
+            <button type="file" name="file" placeholder="don" value="Upload">
           </div>
           <?php
           // Include the database configuration file
@@ -95,20 +92,18 @@
                 <img src="<?php echo $imageURL; ?>" alt="" />
              </div>
           <?php }
-          }else{ ?>
-              <p>No image(s) found...</p>
-          <?php } ?>
-
+          } ?>
+          
           <hr>
           <div class=" d-flex py-1 align-items-center justify-content-between">
             <button type="button" class="btn ms-auto me-2 border-primary text-primary btn-cancel border rounded-pill">
               Cancel
             </button>
-             <input type="submit" class="btn  btn-post border rounded-pill" name="submit" value="Upload">
+             <input type="submit" class="btn btn-post border rounded-pill" name="submit" value="Done">
           </div>
         </div>
       </form>
-    </div>
+    </div> -->
 
     <div class="overflow" style="display: none;"></div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light"
