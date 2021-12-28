@@ -68,23 +68,43 @@
       </form>
     </div>
 
+     <?php if(isset($_GET['error']))  echo "<div class='text-danger'>{$_GET['error']}</div>"; ?>
+
     <div class="create-post" style="display: block">
-      <form action="" class="px-3 pb-2 h-100">
+      <form  action="upload.php" method="post" enctype="multipart/form-data" class="px-3 pb-2">
         <div class="create-content h-100">
           <div class="create-title py-3 h5 d-flex">Edit your photo
             <div class="ms-auto Close text-black cursor-pointer"><i class="bi bi-x-lg"></i></div>
           </div>
           <div class="create-status pt-2">
-             
+            Select Image File to Upload:
+            <input type="file" name="file"  value="Upload">
           </div>
+          <?php
+          // Include the database configuration file
+          include 'dbConfig.php';
+          
+          // Get images from the database
+          $query = $db->query("SELECT * FROM db_images ORDER BY uploaded_on DESC");
+          
+          if($query->num_rows > 0){
+              while($row = $query->fetch_assoc()){
+                  $imageURL = 'uploads/'.$row["file_name"];
+          ?>
+             <div class="upload-img">
+                <img src="<?php echo $imageURL; ?>" alt="" />
+             </div>
+          <?php }
+          }else{ ?>
+              <p>No image(s) found...</p>
+          <?php } ?>
+
           <hr>
           <div class=" d-flex py-1 align-items-center justify-content-between">
             <button type="button" class="btn ms-auto me-2 border-primary text-primary btn-cancel border rounded-pill">
               Cancel
             </button>
-            <button type="button" class="btn  btn-post border rounded-pill">
-              Done
-            </button>
+             <input type="submit" class="btn  btn-post border rounded-pill" name="submit" value="Upload">
           </div>
         </div>
       </form>

@@ -5,7 +5,7 @@
         $email = $_POST['txtEmail'];
         $pass = $_POST['txtPass'];
 
-        $conn = mysqli_connect("localhost", "root", "", "job");
+        $conn = mysqli_connect("localhost", "root", "", "linkedin");
         if(!$conn) {
             die("Connect failure");
         }
@@ -18,7 +18,7 @@
             header("location: signUp.php?error = $error");
         } else {
             $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
-            $sql_2 = "INSERT INTO db_user(email_user, pass_user)
+            $sql_2 = "INSERT INTO db_user(email_user, password_user)
             VALUES('$email', '$pass_hash')";
             $result_02 = mysqli_query($conn, $sql_2);
             
