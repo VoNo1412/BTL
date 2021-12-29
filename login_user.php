@@ -18,7 +18,7 @@
 
 <body>
   <div class="container-fluid px-0 position-relative" style="background: #f3f2ef;">
-    <div class="create-post" style="display: none;">
+    <div class="create-post" id="postImg2" style="display: none;">
       <form action="" class="px-3 pb-2 h-100">
         <div class="create-content h-100">
           <div class="create-title py-3 h5 d-flex">Create a post
@@ -41,12 +41,16 @@
             </div>
 
             <textarea class="form-control px-0 py-2 flex-grow-1"
-              placeholder="What do you want to talk about?" style="border: none;"
+              placeholder="What do you want to talk about?" style="border: none; overflow: hidden;"
               id="txtContent"></textarea>
+              <div class="">
+                <img src="" alt="" class="display_photo">
+              </div>
           </div>
+          <hr class="mb-0">
           <div class=" d-flex py-1 align-items-center justify-content-between">
             <ul class="list-create mb-0 ps-0">
-              <li class="item-create">
+              <li class="item-create btnPhoto2">
                 <i class="bi bi-image-fill"></i>
               </li>
               <li class="item-create">
@@ -68,42 +72,28 @@
       </form>
     </div>
 
-    <!-- <div class="create-post" style="display: block; height: auto;">
-      <form  action="upload.php" method="post" enctype="multipart/form-data" class="px-3 pb-2 h-100">
+    <div class="create-post" id="post-img" style="display: none;">
+      <form  id="btnForm" method="post" enctype="multipart/form-data" class="px-3 pb-2 h-100">
         <div class="create-content justify-content-space-between h-100" >
-          <div class="create-title py-3 h5 d-flex">Edit your photo
-            <div class="ms-auto Close text-black cursor-pointer"><i class="bi bi-x-lg"></i></div>
+          <div class=" py-3 h5 d-flex mb-0">Edit your photo
+            <div class="ms-auto Close text-black  cursor-pointer Close"><i class="bi bi-x-lg Close"></i></div>
           </div>
-          <div class="create-status align-items-center justify-content-center pt-2">
-            <button type="file" name="file" placeholder="don" value="Upload">
+          <hr style="margin-top: 0;">
+          <div class="create-status">
+            <input type="file" name="file"  class="photo py-2">
+            <img src="" alt="" class="display_img">
+
           </div>
-          <?php
-          // Include the database configuration file
-          include 'dbConfig.php';
-          
-          // Get images from the database
-          $query = $db->query("SELECT * FROM db_images ORDER BY uploaded_on DESC");
-          
-          if($query->num_rows > 0){
-              while($row = $query->fetch_assoc()){
-                  $imageURL = 'uploads/'.$row["file_name"];
-          ?>
-             <div class="upload-img">
-                <img src="<?php echo $imageURL; ?>" alt="" />
-             </div>
-          <?php }
-          } ?>
-          
           <hr>
           <div class=" d-flex py-1 align-items-center justify-content-between">
             <button type="button" class="btn ms-auto me-2 border-primary text-primary btn-cancel border rounded-pill">
               Cancel
             </button>
-             <input type="submit" class="btn btn-post border rounded-pill" name="submit" value="Done">
+             <button class="btn btn-done border rounded-pill">Done</button>
           </div>
         </div>
       </form>
-    </div> -->
+    </div>
 
     <div class="overflow" style="display: none;"></div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light"
@@ -280,8 +270,9 @@
       </div>
     </div>
   </div>
+  
   <script src="./JS/login_user.js"></script>
   <script src="./JS/bootstrap.bundle.min.js"></script>
 </body>
-
+        
 </html>

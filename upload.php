@@ -9,7 +9,7 @@ $fileName = basename($_FILES["file"]["name"]);
 $targetFilePath = $targetDir . $fileName;
 $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
-if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
+if(!empty($_FILES["file"]["name"])){
     // Allow certain file formats
     if (file_exists($target_file)) {
         echo "Sorry, file already exists.";

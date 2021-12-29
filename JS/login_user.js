@@ -4,7 +4,23 @@ const overflow = document.querySelector(".overflow");
 const txtContent = document.querySelector("#txtContent");
 const txtName = document.querySelector(".create-name");
 const btnPost = document.querySelector(".btn-post");
+const btnDone = document.querySelector(".btn-done");
 const postEl = document.querySelector(".posted-content");
+const postImg = document.querySelector("#post-img");
+const photo = document.querySelector(".photo");
+const btnPhoto = document.querySelector(".btnPhoto");
+var upload_img = "";
+
+photo.addEventListener("change", function() {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+        upload_img = reader.result;
+        document.querySelector(".display_img").src = upload_img;
+        postImg.style.height = "auto";
+    })
+    reader.readAsDataURL(this.files[0]);
+    photo.style.display = "none";
+})
 
 
 class Post {
@@ -22,11 +38,22 @@ class Post {
     }
 }
 
-
-contaienrFluid.addEventListener("click", (e) => {
+contaienrFluid.addEventListener("click", function(e) {
     handlyStatus(e.target);
     handlyPost();
+    handlyImg(e.target);
 });
+
+function handlyImg(eventS) {
+    if (eventS.classList.contains("btnPhoto") || eventS.parentElement.classList.contains("btnPhoto2") || eventS.classList.contains("bi-image-fill")) {
+        postImg.style.display = "block";
+        overflow.style.display = "block";
+    } else if (eventS.className == "overflow" || eventS.parentElement.classList.contains("Close")) {
+        postImg.style.display = "none";
+        overflow.style.display = "none";
+        document.querySelector(".display_img").src = "";
+    }
+}
 
 function handlyStatus(eventS) {
     if (eventS.classList.contains("status")) {
@@ -41,11 +68,9 @@ function handlyStatus(eventS) {
 function handlyPost() {
     txtContent.addEventListener("keydown", e => {
         if (e.target.value !== "") {
-
             btnPost.classList.add("bg-primary", "fw-bold", "text-white");
         } else {
             btnPost.classList.remove("bg-primary", "fw-bold", "text-white");
-
         }
     });
 }
@@ -160,11 +185,47 @@ function likeMaster() {
     }, 801)
 }
 
+btnDone.addEventListener("click", (e) => {
+    e.preventDefault();
+    let form = document.querySelector("#btnForm");
+    let img = form.getElementsByTagName("img")[0].src;
+    if (e.target.classList.contains("btn-done")) {
+        creatPost.style.display = "block";
+        overflow.style.display = "block";
+        document.querySelector(".display_photo").src = img;
+        creatPost.style.height = "auto";
+        nonePhoto();
+    } else if (e.target.className == "overflow" || e.target.parentElement.classList.contains("Close") || e.target.classList.contains("btn-post")) {
+        creatPost.style.display = "none";
+        overflow.style.display = "none";
+        nonePhoto();
+    }
+    handlyPost();
+});
+
+btnPhoto.addEventListener("click", () => {
+    postImg.style.display = "block";
+    overflow.style.display = "block";
+    photo.style.display = "block";
+})
 
 
+function nonePhoto() {
+    postImg.style.display = "none";
+    overflow.style.display = "none";
+    document.querySelector(".display_img").src = "";
+}
 
 btnPost.addEventListener("click", () => {
     loading();
     stopLoading();
     loadingPost();
 });
+
+
+
+
+
+
+
+
