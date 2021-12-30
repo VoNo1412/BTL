@@ -103,6 +103,7 @@
                 }
             ?>
             <button type="submit" name="txtBtnSignUp"class="btn--primary fw-bold text-white">Agree & Join</button>
+            <!-- <a href="signupName.php"class="btn--primary fw-bold text-white">Agree & Join</button>  -->
             <div class="mt-5 text-center">Already on LinkedIn? <a href="signin.php" class="fw-bold">Sign in</a></div>
             </form>
 

@@ -4,7 +4,7 @@
         $email = $_POST['txtEmail'];
         $pass  = $_POST['txtPass'];
         
-        $conn = mysqli_connect("localhost", "root", "", "linkedin");
+        $conn = mysqli_connect("localhost", "root", "", "btl");
         if(!$conn) {
             die("Connect failure");
         }
@@ -16,7 +16,8 @@
         if(mysqli_num_rows($result) > 0) {
             $data = mysqli_fetch_assoc($result);
             if(password_verify($pass, $data['password_user'])) {
-                $_SESSION['isLoginOk'] = $email;
+            $_SESSION['fullName'] = $data["first_name"] .' '. $data["last_name"];
+            $_SESSION['isLastName'] = $data["last_name"];
                 header("location: login_user.php");
             }
         } else  {

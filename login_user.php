@@ -1,3 +1,12 @@
+<?php
+        session_start();
+
+        if(!isset($_SESSION['fullName'])) {
+            header("location: signIn.php");
+        }
+?>
+    
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +23,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./CSS/style.css">
   <link rel="stylesheet" href="./CSS/login_user.css">
+  <link rel="stylesheet" href="./CSS/login_user1.css">
 </head>
 
 <body>
@@ -81,8 +91,7 @@
           <hr style="margin-top: 0;">
           <div class="create-status">
             <input type="file" name="file"  class="photo py-2">
-            <img src="" alt="" class="display_img">
-
+            <img src="" alt="" class="display_img" accept="image/png, image/jpg">
           </div>
           <hr>
           <div class=" d-flex py-1 align-items-center justify-content-between">
@@ -96,66 +105,119 @@
     </div>
 
     <div class="overflow" style="display: none;"></div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light"
-      style="height: 52px; padding:0 220px;">
-      <a class="navbar-brand fs-3 px-2 fw-bold d-flex align-items-center"
-        style="height: 40px; background: #3467c2; color: white;" href="#">in</a>
-      <form class="d-flex align-items-center px-4 me-5" style="background: #eef3f8;">
-        <i class="bi bi-search "></i>
-        <input class="form-control me-2 border-0 " type="search" placeholder="Search"
-          aria-label="Search" style="background-color: #eef3f8;">
-      </form>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-        <ul class="navbar-nav" style="text-align: center; ">
-          <li class="nav-item ms-5 ">
-            <a class="nav-link " aria-current="page" href="#"><i class="bi bi-house-fill"></i> <br>
-              Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-people-fill"></i> <br> My network</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#"><i class="bi bi-briefcase-fill"></i>
-              <br> jobs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="#"><i class="bi bi-chat-dots-fill"></i>
-              <br>
-              Messaging</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="#"><i class="bi bi-bell-fill"></i> <br>
-              Notefications</a>
-          </li>
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
-                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-person-circle"></i> <br> My
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="MY"
-            aria-expanded="false" style="text-align: center;">
-            <i class="bi bi-table"></i> <br> Work
-          </a>
-          <a
-            href="https://www.linkedin.com/premium/survey/?destRedirectURL=https%3A%2F%2Fwww.linkedin.com%2Ffeed%2F%3FshowPremiumWelcomeBanner%3Dtrue&upsellOrderOrigin=premium_nav_upsell_text">Try
-            Premium for free</a>
-        </ul>
-      </div>
-    </nav>
+    <div class="container-fluid" style="height: 53px; background-color: white">
+        <nav class="navbar navbar-expand-lg pt-0 " style="width: 1080px; margin: 0 auto; height: 53px;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34"
+                        viewBox="0 0 34 34" style="color: #3467c2">
+                        <title>
+                            LinkedIn
+                        </title>
 
-    <div class="container">
-      <div class="row px-5 mt-3 justify-content-center">
-        <div class="col-md-3" style="max-width: 250px;">
+                        <g>
+                            <path
+                                d="M34,2.5v29A2.5,2.5,0,0,1,31.5,34H2.5A2.5,2.5,0,0,1,0,31.5V2.5A2.5,2.5,0,0,1,2.5,0h29A2.5,2.5,0,0,1,34,2.5ZM10,13H5V29h5Zm.45-5.5A2.88,2.88,0,0,0,7.59,4.6H7.5a2.9,2.9,0,0,0,0,5.8h0a2.88,2.88,0,0,0,2.95-2.81ZM29,19.28c0-4.81-3.06-6.68-6.1-6.68a5.7,5.7,0,0,0-5.06,2.58H17.7V13H13V29h5V20.49a3.32,3.32,0,0,1,3-3.58h.19c1.59,0,2.77,1,2.77,3.52V29h5Z"
+                                fill="currentColor"></path>
+                        </g>
+                    </svg>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search"
+                            aria-label="Search">
+                    </form>
+
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="border-right: 1px solid gainsboro; height: 50px;">
+                        <li class="nav-item pe-3">
+                            <a class="nav-link text-center" href="#">
+                                <div class="nav-icon">
+                                    <i class="bi bi-house-fill"></i>
+                                </div>
+                                <div class="nav-context">Home</div>
+                            </a>
+                        </li>
+                        <li class="nav-item pe-3">
+                            <a class="nav-link text-center" href="#">
+                                <div class="nav-icon">
+                                    <i class="bi bi-people-fill"></i> 
+                                </div>
+                                <div class="nav-context">My Network</div>
+                            </a>
+                        </li>
+                        <li class="nav-item pe-3">
+                            <a class="nav-link text-center" href="#">
+                                <div class="nav-icon">
+                                    <i class="bi bi-briefcase-fill"></i>
+                                </div>
+                                <div class="nav-context">Job</div>
+                            </a>
+                        </li>
+                        <li class="nav-item pe-3">
+                            <a class="nav-link text-center" href="#">
+                                <div class="nav-icon">
+                                    <i class="bi bi-chat-dots-fill"></i>
+                                </div>
+                                <div class="nav-context">Messaging</div>
+                            </a>
+                        </li>
+                        <li class="nav-item pe-2">
+                            <a class="nav-link text-center" href="#">
+                                <div class="nav-icon">
+                                    <i class="bi bi-bell-fill"></i> 
+                                </div>
+                                <div class="nav-context">Notifications</div>
+                            </a>
+                        </li>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                              <div class="lh-1">
+                                  <img src="./img/img1.jpeg" style="width: 20px; height: 20px; border-radius: 50%;" alt="">
+                              </div>
+                              <span class="nav-context">Me</span>
+                            </button>
+                            <ul class="dropdown-menu m-0" aria-labelledby="dropdownMenuButton1"  style="top: 60px; left: -100px;">
+                              <li class="d-block"><a class="dropdown-item" href="#">View Profile</a></li>
+                              <li class="d-block"><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </div>    
+                    </ul>
+                    <ul class="navbar-nav mb-2 mb-lg-0" style="padding-top: 8px;">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                              <div class="lh-1 nav-icon">
+                                <i class="bi bi-grid-3x3-gap"></i>
+                              </div>
+                              <span class="nav-context">Work</span>
+                            </button>
+                            <ul class="dropdown-menu m-0" aria-labelledby="dropdownMenuButton1">
+                              <li><a class="dropdown-item" href="#">Action</a></li>
+                              <li><a class="dropdown-item" href="#">Another action</a></li>
+                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div> 
+                        <li class="nav-item ">
+                            <a class="nav-link text-center" href="#">
+                                <div class="nav-icon">
+                                    <i class="bi bi-basket-fill"></i>
+                                </div>
+                                <div class="nav-context">Post a job</div>
+                            </a>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container-fluid">
+      <div class="row" style="width: 1080px; margin: 0 auto; padding: 30px 0;">
+        <div class="col-md-3 px-0" style="max-width: 232px;">
           <div class="side-bar"
             style="border: 1px solid gainsboro;border-radius: 10px ;overflow: hidden;">
             <div class="profile-user">
@@ -165,7 +227,14 @@
                   <img src="./img/img1.jpeg" class="rounded-circle"
                     style="width: 68px; height: 68px; transform: translateY(-50%);" alt="">
                 </div>
-                <div class="profile-name bg-light"> Your Name </div>
+                <div class="profile-name bg-light fw-bold text-capitalize">
+                  <?php
+                     if(isset($_SESSION['fullName']))
+                        {
+                            echo $_SESSION['fullName'];
+                        }
+                  ?>
+                </div>
                 <div class="profile-detail bg-light">--</div>
               </div>
             </div>
@@ -195,10 +264,10 @@
           </div>
         </div>
 
-        <div class="col-md-6">
-          <div class="content-header bg-light"
+        <div class="col-md-6" style="max-width: 540px;">
+          <div class="content-header"
             style="border: 1px solid gainsboro;  border-radius: 10px; overflow: hidden; height: 116px;">
-            <div class="post d-flex bg-light" style="align-items: center; padding: 12px 0 6px 0; ">
+            <div class="post d-flex" style="align-items: center; padding: 12px 0 6px 0; background: #fff">
               <img class="rounded-circle ms-3" style="width: 46px; height: 46px;"
                 src="./img/img1.jpeg" alt="">
               <input class="ps-3 flex-grow-1 status" type="text" placeholder="Start a post"
@@ -207,19 +276,19 @@
             </div>
 
             <div class="function">
-              <div class="list-function row"
-                style="color: darkgrey; justify-content: space-around;">
-                <div class="col-md-2 p-2 text-center btnPhoto">
-                  <i class="bi bi-image" style="color: dodgerblue; "></i>Photo
+              <div class="list-function"
+                style="color: darkgrey;">
+                <div class="p-2 text-center d-flex btnPhoto">
+                  <i class="bi bi-image" style="color: dodgerblue; "></i><span>Photo</span>
                 </div>
-                <div class="col-md-2 p-2 text-center">
-                  <i class="bi bi-youtube" style="color: red;"></i>Video
+                <div class="p-2 text-center d-flex">
+                  <i class="bi bi-youtube" style="color: red;"></i><span>Video</span>
                 </div>
-                <div class="col-md-2 p-2 text-center">
-                  <i class="bi bi-calendar-date" style="color: sandybrown;"></i>Event
+                <div class="p-2 text-center d-flex">
+                  <i class="bi bi-calendar-date" style="color: sandybrown;"></i><span>Event</span>
                 </div>
-                <div class="col-md-3 p-2 text-center"><i class="bi bi-card-text"
-                    style="color: tomato;"></i>Write article</div>
+                <div class="p-2 text-center d-flex"><i class="bi bi-card-text"
+                    style="color: tomato;"></i><span>Write article</span></div>
               </div>
             </div>
           </div>
@@ -231,10 +300,9 @@
           </div>
         </div>
 
-        <div class="col-md-3">
-          <div class="list-people bg-light"
-            style="height: 374px; border: 1px solid gainsboro; border-radius: 10px;">
-            Add to your feed
+        <div class="col-md-3" style="max-width: 315px;">
+          <div class="list-people bg-light">
+            
           </div>
           <div class="img-dreamjob mt-md-2">
             <img
