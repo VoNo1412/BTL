@@ -37,11 +37,11 @@
           <div class="create-status pt-2">
             <div class="create-user py-1 d-flex align-items-center" style="gap: 0 10px;">
               <div class="create-img">
-                <img src="./img/img1.jpeg" alt="img-user"
+                <img src="" id="create-img" alt="img-user"
                   style="width: 55px; height: 55px; border-radius: 50%;">
               </div>
               <div class="create-info">
-                <div class="create-name">Arthur Sherlock Baker</div>
+                <div class="create-name"></div>
                 <button type="button" class="btn border dropdown-toggle rounded-pill"
                   data-bs-toggle="dropdown" aria-expanded="false" style="line-height: 10px;">
                   <i class="bi bi-circle-half"></i>
@@ -216,7 +216,7 @@
         </nav>
     </div>
     <div class="container-fluid">
-      <div class="row" style="width: 1080px; margin: 0 auto; padding: 30px 0;">
+      <div class="row justify-content-center" style="width: 1230px; gap: 0 20px; height: 100%; margin: 0 auto; padding: 30px 0 0;">
         <div class="col-md-3 px-0" style="max-width: 232px;">
           <div class="side-bar"
             style="border: 1px solid gainsboro;border-radius: 10px ;overflow: hidden;">
@@ -264,12 +264,12 @@
           </div>
         </div>
 
-        <div class="col-md-6" style="max-width: 540px;">
+        <div class="col-md-6 px-0" style="max-width: 540px;">
           <div class="content-header"
             style="border: 1px solid gainsboro;  border-radius: 10px; overflow: hidden; height: 116px;">
             <div class="post d-flex" style="align-items: center; padding: 12px 0 6px 0; background: #fff">
-              <img class="rounded-circle ms-3" style="width: 46px; height: 46px;"
-                src="./img/img1.jpeg" alt="">
+              <img class="img_user rounded-circle ms-3" style="width: 46px; height: 46px;"
+                src="./img/photo1.jpg" alt="">
               <input class="ps-3 flex-grow-1 status" type="text" placeholder="Start a post"
                 style="margin:0 10px;border: 1px solid gainsboro; height: 48px; border-radius: 30px; cursor: pointer;"
                 readonly>
@@ -300,14 +300,62 @@
           </div>
         </div>
 
-        <div class="col-md-3" style="max-width: 315px;">
-          <div class="list-people bg-light">
-            
+        <div class="col-md-3 px-0" style="">
+          <div class="list-people  p-3" style="max-width: 315px; height: 370px; background: white; border-radius: 12px;">
+            <div class="h6 d-flex align-items-center">Add to your feed 
+              <div class="ms-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
+              <path d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2zm-3 8v2H7.5A1.5 1.5 0 016 10.5a1.56 1.56 0 01.1-.5l1.08-3h2.13l-1.09 3zm0-3.75A1.25 1.25 0 1110.25 5 1.25 1.25 0 019 6.25z"></path>
+              </svg></div>
+            </div>
+            <div class="list-item row align-items-start mt-4">
+              <div class="col-md-3 pe-0 list-img">
+                <img src="./img/photo1.jpg" alt="" style="width: 50px; height: 50px; border-radius: 50%; ">
+              </div>
+              <div class="col-md-9 ps-0 list-content flex-column">
+                <h6 class="mb-0">VietNamWorks</h6>
+                <small>Company Human Resource</small>
+                <button style="color: #666666; border: 1px solid gray" class="mt-1 rounded-pill btn px-3 py-1  fw-bold sign">
+                  <span><i class="bi bi-plus-lg"></i></span>
+                  Follow
+                </button>
+              </div>
+            </div>
+
+            <div class="list-item row align-items-start mt-2">
+              <div class="col-md-3 pe-0 list-img">
+                <img src="./img/photo2.jpg" alt="" style="width: 50px; height: 50px; border-radius: 50%; ">
+              </div>
+              <div class="col-md-9 ps-0 list-content">
+                <h6 class="mb-0">The Shy</h6>
+                <small>Company Game City</small>
+                <button style="color: #666666; border: 1px solid gray" class="mt-1 rounded-pill btn px-3 py-1  fw-bold sign">
+                  <span><i class="bi bi-plus-lg"></i></span>
+                  Follow
+                </button>
+              </div>
+            </div>
+
+            <div class="list-item row align-items-start mt-2">
+              <div class="col-md-3 pe-0 list-img">
+                <img src="./img/photo3.jpg" alt="" style="width: 50px; height: 50px; border-radius: 50%; ">
+              </div>
+              <div class="col-md-9 ps-0 list-content">
+                <h6 class="mb-0">Blog VoNo</h6>
+                <small>Company Kmowledge</small>
+                <button style="color: #666666; border: 1px solid gray" class="mt-1 rounded-pill btn px-3 py-1  fw-bold sign">
+                  <span><i class="bi bi-plus-lg"></i></span>
+                  Follow
+                </button>
+              </div>
+            </div>
+
+            <div class="mt-4 fw-bold" style="font-size: 13px; color: gray;">
+              View all recommendations 
+            </div>
           </div>
-          <div class="img-dreamjob mt-md-2">
-            <img
-              src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg"
-              alt="">
+          <div class="p-2 mt-3" style="max-width: 315px; background: white; border-radius: 12px;">
+            <img src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg" alt="">
           </div>
           <div class="footer" style="margin: 8px 1px;background-color: #f3f2ef;">
             <ul style="font-size: 12px;">
