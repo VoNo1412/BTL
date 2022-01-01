@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
     session_start();
 
     ifisset($_POST['btnLogout']){
@@ -6,4 +6,9 @@
         header("location:signIn.php");
     }
 
+?> -->
+<?php
+    function btnLogout() {
+        header("location:signIn.php");
+    }
 ?>
