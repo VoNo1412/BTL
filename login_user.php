@@ -184,7 +184,7 @@
                             </button>
                             <ul class="dropdown-menu m-0" aria-labelledby="dropdownMenuButton1"  style="top: 60px; left: -100px;">
                               <li class="d-block"><a class="dropdown-item" href="#">View Profile</a></li>
-                              <li class="d-block"><a class="dropdown-item" href="#">Logout</a></li>
+                              <li class="d-block btnLogout"><a class="dropdown-item" name="btnLogout"  href="signIn.php">Logout</a></li>
                             </ul>
                         </div>    
                     </ul>
