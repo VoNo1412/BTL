@@ -194,7 +194,9 @@
     </div>
   </div>
 
-  
+  <button class="test">BUTTON</button>
+
+  <!--  active-job -->
   <div class="container px-lg-7 py-2 applyJob">
     <div class="row px-4 position-relative">
       <div class="col-md-6 px-0 border-end" style="max-width: 507px;">
@@ -206,14 +208,14 @@
                         die("Connect failure");
                     }
             
-                    $sql = "SELECT user.images, user.first_name, user.last_name, job.address_job
+                    $sql = "SELECT user.images, user.first_name, user.last_name, job.address_job, job.post_job
                      FROM db_user user, db_job job where user.id_user = job.id_user";
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result)) {
                       while($row = mysqli_fetch_assoc($result)) {
                        
               ?>     
-                      <li class="list-job border-bottom p-3 active-job">
+                      <li class="list-job border-bottom p-3">
                         <div class="row">
                           <div class="col-md-2 pe-0">
                             <img src="<?php echo $row['images']?>" alt="img" id="txtUser" class="txtUser"
@@ -227,6 +229,9 @@
                                 <path d="M14.7 10H17L11.5 18L8 14.5L9.3 13.2L11.2 15.1L14.7 10ZM20 3V19C20 20.7 18.7 22 17 22H7C5.3 22 4 20.7 4 19V3H9.7L10.2 2C10.6 1.4 11.2 1 12 1C12.7 1 13.4 1.4 13.8 2L14.3 3H20ZM18 5H15.4L16 6.1V7H8V6.1L8.6 5H6V19C6 19.6 6.4 20 7 20H17C17.6 20 18 19.6 18 19V5Z" fill="currentColor"></path>
                                 </svg>
                             </span>
+                            <div class="txtPost_Job px-1 d-none">
+                              <?php echo $row['post_job'] ?>
+                           </div>
                             <span class="small">Be an early applicant</span>
                             <div class="txtTime small">4 days ago</div>
                           </div>
@@ -393,7 +398,8 @@
                 </ul>
               </div>
       
-              <div class="txtDetail px-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel necessitatibus aspernatur cumque distinctio, quas ab quod exercitationem quisquam voluptas eos et nam adipisci at ducimus delectus, dignissimos rerum voluptatem. Reiciendis nostrum at accusamus, est exercitationem, illum quisquam voluptatum facere doloribus in rerum adipisci. Quam, ea et? Sapiente libero qui animi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum cumque pariatur laborum eius porro quis, officia consequatur repellendus vitae. Sunt laboriosam accusamus delectus tenetur dolore ipsam, sequi dignissimos necessitatibus debitis eum quam ad eligendi totam distinctio atque alias maxime quo eaque praesentium voluptas, facere ut? Aperiam quae deserunt qui eaque.
+              <div class="txtDetail px-1">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis, porro fugiat architecto ad corporis quis quo, nam ratione modi tenetur at suscipit nisi magni mollitia repellat, sapiente asperiores ex quae impedit nobis quam. Minus corporis optio, saepe fuga assumenda facere ipsa facilis, amet, fugiat recusandae laudantium qui aperiam ratione quae.  
               </div>
             
               <div class="show-more rounded-2">Show more
