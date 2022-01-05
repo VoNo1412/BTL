@@ -151,14 +151,14 @@
                                 <div class="nav-context">My Network</div>
                             </a>
                         </li>
-                        <li class="nav-item pe-3">
+                        <form action="process_Job.php" method="POST" class="nav-item pe-3">
                             <a class="nav-link text-center" href="#">
                                 <div class="nav-icon">
                                     <i class="bi bi-briefcase-fill"></i>
                                 </div>
-                                <div class="nav-context">Job</div>
+                                <input class="nav-context" name="btnJob" style="border: none; background: none;" value="Job" type="submit">
                             </a>
-                        </li>
+                        </form>
                         <li class="nav-item pe-3">
                             <a class="nav-link text-center" href="#">
                                 <div class="nav-icon">

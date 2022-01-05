@@ -193,32 +193,54 @@
       </ul>
     </div>
   </div>
+
   
   <div class="container px-lg-7 py-2 applyJob">
-      <div class="row px-4 position-relative">
-        <div class="col-md-6 px-0 border-end" style="max-width: 507px;">
+    <div class="row px-4 position-relative">
+      <div class="col-md-6 px-0 border-end" style="max-width: 507px;">
           <p>7,000+ Jobs in Hanoi Capital Region (104 new)</p>
           <ul class="list-group">
-            <li class="list-job border-bottom p-3 active-job">
-              <div class="row">
-                <div class="col-md-2 pe-0">
-                  <img src="./img/img6.jpeg" alt="img" id="txtUser" class="txtUser"
-                    style="width: 56px; height: 56px;">
-                </div>
-                <div class="col-md-10 ps-0">
-                  <a href="#" class="h5 txtName" id="txtName">HR & Admin Assistant</a>
-                  <p class="mb-0 py-1 txtAddress" id="txtAddress">Pizza Hut Việt Nam Hanoi, Hanoi, Vietnam</p>
-                  <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false" class="result-benefits__icon-svg lazy-loaded">
-                      <path d="M14.7 10H17L11.5 18L8 14.5L9.3 13.2L11.2 15.1L14.7 10ZM20 3V19C20 20.7 18.7 22 17 22H7C5.3 22 4 20.7 4 19V3H9.7L10.2 2C10.6 1.4 11.2 1 12 1C12.7 1 13.4 1.4 13.8 2L14.3 3H20ZM18 5H15.4L16 6.1V7H8V6.1L8.6 5H6V19C6 19.6 6.4 20 7 20H17C17.6 20 18 19.6 18 19V5Z" fill="currentColor"></path>
-                      </svg>
-                  </span>
-                  <span class="small">Be an early applicant</span>
-                  <div class="txtTime small">4 days ago</div>
-                </div>
-              </div>
-            </li>
-            <li class="list-job border-bottom p-3">
+              <?php
+                    $conn = mysqli_connect("localhost", "root", "", "btl");
+                    if(!$conn) {
+                        die("Connect failure");
+                    }
+            
+                    $sql = "SELECT user.images, user.first_name, user.last_name, job.address_job
+                     FROM db_user user, db_job job where user.id_user = job.id_user";
+                    $result = mysqli_query($conn, $sql);
+                    if(mysqli_num_rows($result)) {
+                      while($row = mysqli_fetch_assoc($result)) {
+                       
+              ?>     
+                      <li class="list-job border-bottom p-3 active-job">
+                        <div class="row">
+                          <div class="col-md-2 pe-0">
+                            <img src="<?php echo $row['images']?>" alt="img" id="txtUser" class="txtUser"
+                              style="width: 56px; height: 56px;">
+                          </div>
+                          <div class="col-md-10 ps-0">
+                            <a href="#" class="h5 txtName" id="txtName"><?php echo $row['first_name'] . $row['last_name'] ?></a>
+                            <p class="mb-0 py-1 txtAddress" id="txtAddress"><?php echo $row['address_job']?></p>
+                            <span>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false" class="result-benefits__icon-svg lazy-loaded">
+                                <path d="M14.7 10H17L11.5 18L8 14.5L9.3 13.2L11.2 15.1L14.7 10ZM20 3V19C20 20.7 18.7 22 17 22H7C5.3 22 4 20.7 4 19V3H9.7L10.2 2C10.6 1.4 11.2 1 12 1C12.7 1 13.4 1.4 13.8 2L14.3 3H20ZM18 5H15.4L16 6.1V7H8V6.1L8.6 5H6V19C6 19.6 6.4 20 7 20H17C17.6 20 18 19.6 18 19V5Z" fill="currentColor"></path>
+                                </svg>
+                            </span>
+                            <span class="small">Be an early applicant</span>
+                            <div class="txtTime small">4 days ago</div>
+                          </div>
+                        </div>
+                      </li>
+                      <?php 
+
+                }
+              }
+
+              mysqli_close($conn)
+            ?>
+      
+            <!-- <li class="list-job border-bottom p-3">
               <div class="row">
                 <div class="col-md-2 pe-0">
                   <img src="./img/img1.jpeg" alt="img" id="txtUser" class="txtUser"
@@ -331,9 +353,10 @@
                   <div class="txtTime small">4 days ago</div>
                 </div>
               </div>
-            </li>
+            </li> -->
           </ul>
         </div>
+        
         <div class="col-md-6 flex-grow-1 apply">
            <div class="content">
             <div class="job-right">
@@ -348,7 +371,7 @@
                       </div>
                       <div class="col-md-10">
                         <a href="#" class="h5 mt-2 d-block txtName" id="txtName">
-                          <h2 class="mb-0" style="font-size: 24px;">HR & Admin Assistant</h2>
+                          <h2 class="mb-0" style="font-size: 24px;">VonO</h2>
                         </a>
     
                         <p class="mb-0 txtAddress"  style="max-width: 100%" id="txtAddress">Pizza Hut Việt Nam <i class="bi bi-dot"></i> Hanoi, Hanoi, Vietnam</p>
@@ -369,10 +392,10 @@
                   </li>
                 </ul>
               </div>
-  
-              <div class="txtDetail px-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut eligendi id fugiat deserunt. Possimus explicabo non maiores adipisci dolore ducimus voluptatem odio, tempora ex excepturi expedita aut assumenda dolorum, veritatis dicta similique et sint culpa a. Magni, adipisci. A dolorem quasi dicta laudantium? Distinctio molestiae dolor ipsa, ullam eveniet voluptatibus quisquam recusandae, dicta voluptate harum magni placeat amet blanditiis animi! Ratione architecto asperiores voluptate labore, nostrum enim cumque?
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis temporibus asperiores consequuntur. Voluptates, tenetur, quod voluptas similique aliquam eum expedita neque dolorem nemo velit delectus voluptatum accusantium non obcaecati culpa qui? Atque, molestias? Placeat perspiciatis inventore at molestias voluptates iste maiores sed cupiditate minima reiciendis illum, consequuntur quaerat accusantium incidunt molestiae illo dolorem necessitatibus voluptatem aliquid temporibus rem ea? Aliquid vel quaerat dicta quidem, aspernatur ratione debitis animi id! A debitis, magnam nisi nostrum laudantium molestiae voluptates non facere. Atque rerum quod aliquam ea officia itaque expedita, perspiciatis aspernatur. Maiores ipsa sed vel ea rem. Cum culpa pariatur corrupti molestias.
+      
+              <div class="txtDetail px-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel necessitatibus aspernatur cumque distinctio, quas ab quod exercitationem quisquam voluptas eos et nam adipisci at ducimus delectus, dignissimos rerum voluptatem. Reiciendis nostrum at accusamus, est exercitationem, illum quisquam voluptatum facere doloribus in rerum adipisci. Quam, ea et? Sapiente libero qui animi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum cumque pariatur laborum eius porro quis, officia consequatur repellendus vitae. Sunt laboriosam accusamus delectus tenetur dolore ipsam, sequi dignissimos necessitatibus debitis eum quam ad eligendi totam distinctio atque alias maxime quo eaque praesentium voluptas, facere ut? Aperiam quae deserunt qui eaque.
               </div>
+            
               <div class="show-more rounded-2">Show more
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                   class="bi bi-arrow g-3-down-short down" viewBox="0 0 16 16">
