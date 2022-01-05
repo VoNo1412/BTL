@@ -194,7 +194,7 @@
     </div>
   </div>
 
-  <button class="test">BUTTON</button>
+  
 
   <!--  active-job -->
   <div class="container px-lg-7 py-2 applyJob">

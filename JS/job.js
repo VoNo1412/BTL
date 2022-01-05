@@ -2,6 +2,9 @@
 let lists = document.querySelectorAll(".list-job");
 let showMore = document.querySelector(".show-more");
 let isShow = false;
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("#first_list").classList.add("active-job");
+})
 
 
 lists.forEach(list => {
