@@ -103,7 +103,7 @@
                 <button type="submit" name="txtBtnSignIn"class="btn--primary fw-bold text-white mt-3">Sign In</button>
             </form>
 
-            <div class="mt-3 text-center">New to LinkedIn? <a href="signin.html" class="fw-bold">Join now</a></div>
+            <div class="mt-3 text-center">New to LinkedIn? <a href="signup.php" class="fw-bold">Join now</a></div>
         </div>
     </div>
 </body>
