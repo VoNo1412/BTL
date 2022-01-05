@@ -4,7 +4,10 @@
         if(!isset($_SESSION['fullName'])) {
             header("location: signIn.php");
         }
+        
+        $_SESSION['isLogin']
 ?>
+
     
 
 <!DOCTYPE html>
@@ -184,7 +187,7 @@
                             </button>
                             <ul class="dropdown-menu m-0" aria-labelledby="dropdownMenuButton1"  style="top: 60px; left: -100px;">
                               <li class="d-block"><a class="dropdown-item" href="#">View Profile</a></li>
-                              <li class="d-block"><a class="dropdown-item" href="#" name="btnLogout" >Logout</a></li>
+                              <li class="d-block"><a class="dropdown-item" href="logout.php" name="btnLogout" >Logout</a></li>
                             </ul>
                         </div>    
                     </ul>

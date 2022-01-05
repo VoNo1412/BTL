@@ -18,7 +18,7 @@
             if(password_verify($pass, $data['password_user'])) {
             $_SESSION['fullName'] = $data["first_name"] .' '. $data["last_name"];
             $_SESSION['isLastName'] = $data["last_name"];
-
+            $_SESSION['isLogin'] = $email;
                 header("location: login_user.php");
             }
         } else  {
