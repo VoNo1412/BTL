@@ -116,12 +116,12 @@ function stopLoading() {
 }
 
 function loadingPost() {
-    let gallery = document.querySelector(".display_photo").src;
+    let gallery = document.querySelector(".display_photo");
     let post = new Post(img_user, txtName, txtContent);
     var itemPost = document.createElement("div");
     itemPost.classList = "itemPost py-2";
 
-    if(gallery !== "") {
+    if(gallery.src !== "") {
         itemPost.innerHTML = `
         <div class="content-header" style="border: 1px solid gainsboro;  background-color: #fff; overflow: hidden; border-radius: 10px; ">
         <div class="post d-flex"
