@@ -17,6 +17,7 @@
             $data = mysqli_fetch_assoc($result);
             if(password_verify($pass, $data['password_user'])) {
             $_SESSION['id_user'] = $data['id_user'];
+            $_SESSION['img'] = $data['images'];
             $_SESSION['fullName'] = $data["first_name"] .' '. $data["last_name"];
             $_SESSION['isLastName'] = $data["last_name"];
             $_SESSION['isLogin'] = $email;

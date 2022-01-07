@@ -5,7 +5,7 @@
             header("location: signIn.php");
         }
 
-        $_SESSION['isLogin']
+       $_SESSION['id_user'];
 ?>
 
     
@@ -36,16 +36,16 @@
         <?php echo "<input name='idUser' class='d-none' value=".$_SESSION['id_user'].">" ?>
         <div class="create-content h-100">
           <div class="create-title py-3 h5 d-flex">Create a post
-            <div class="ms-auto Close text-black cursor-pointer"><i class="bi bi-x-lg"></i></div>
+            <div class="ms-auto Close text-black cursor-pointer"><i class="bi bi-x-lg Close"></i></div>
           </div>
           <div class="create-status pt-2">
             <div class="create-user py-1 d-flex align-items-center" style="gap: 0 10px;">
               <div class="create-img">
-                <img src="" id="create-img" alt="img-user"
+                <img src="<?php echo $_SESSION['img'] ?>" id="create-img" alt="img-user"
                   style="width: 55px; height: 55px; border-radius: 50%;">
               </div>
               <div class="create-info">
-                <div class="create-name"></div>
+                <div class="create-name"><?php echo $_SESSION['fullName'] ?></div>
                 <button type="button" class="btn border dropdown-toggle rounded-pill"
                   data-bs-toggle="dropdown" aria-expanded="false" style="line-height: 10px;">
                   <i class="bi bi-circle-half"></i>
@@ -59,14 +59,14 @@
               name="txtPost";
               id="txtContent"></textarea>
               <div class="">
-                <img src="" alt="" class="display_photo">
+                <img src="" alt="" class="takeImg">
               </div>
           </div>
           <hr class="mb-0">
           <div class=" d-flex py-1 align-items-center justify-content-between">
             <ul class="list-create mb-0 ps-0">
-              <li class="item-create btnPhoto2">
-                <i class="bi bi-image-fill"></i>
+              <li class="item-create">
+                <i class="bi bi-image-fill btnPhoto"></i>
               </li>
               <li class="item-create">
                 <i class="bi bi-youtube"></i>
@@ -183,7 +183,7 @@
                         <div class="dropdown">
                             <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                               <div class="lh-1">
-                                  <img src="./img/img1.jpeg" style="width: 20px; height: 20px; border-radius: 50%;" alt="">
+                                  <img src="<?php echo $_SESSION['img'] ?>" id="create-img" style="width: 20px; height: 20px; border-radius: 50%;" alt="">
                               </div>
                               <span class="nav-context">Me</span>
                             </button>
@@ -228,8 +228,8 @@
             <div class="profile-user">
               <div class="profile-header " style="text-align: center; ">
                 <div class="bg-secondary" style="width: 100%; height: 60px;"></div>
-                <div class="profile-img bg-light">
-                  <img src="./img/photo1.jpg" class="rounded-circle"
+                <div class="bg-light">
+                  <img src="<?php echo $_SESSION['img'] ?>" class="rounded-circle" id="profile-img"
                     style="width: 68px; height: 68px; transform: translateY(-50%);" alt="">
                 </div>
                 <div class="profile-name bg-light fw-bold text-capitalize">
@@ -273,8 +273,8 @@
           <div class="content-header"
             style="border: 1px solid gainsboro;  border-radius: 10px; overflow: hidden; height: 116px;">
             <div class="post d-flex" style="align-items: center; padding: 12px 0 6px 0; background: #fff">
-              <img class="img_user rounded-circle ms-3" style="width: 46px; height: 46px;"
-                src="./img/photo1.jpg" alt="">
+              <img id="create-img"  class=" rounded-circle ms-3" style="width: 46px; height: 46px;"
+                src="<?php echo $_SESSION['img'] ?>" alt="">
               <input class="ps-3 flex-grow-1 status" type="text" placeholder="Start a post"
                 style="margin:0 10px;border: 1px solid gainsboro; height: 48px; border-radius: 30px; cursor: pointer;"
                 readonly>
@@ -309,7 +309,7 @@
                     die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
                 }
                 // // Bước 02: Thực hiện truy vấn
-                $sql = "SELECT db_user.first_name, db_user.last_name, db_post.text_post 
+                $sql = "SELECT db_user.first_name, db_user.last_name, db_post.text_post, db_user.images 
                 FROM db_user , db_post where db_user.id_user = db_post.id_user and db_user.id_user = '$id_user'";
             
                 $result = mysqli_query($conn,$sql);
@@ -322,7 +322,7 @@
                    <div class="post d-flex"
                    style="align-items: center;background: white;;padding: 12px 0 6px 0">
                    <img class="rounded-circle ms-3"
-                       style="width: 46px; height: 46px;" src="./img/photo1.jpg"
+                       style="width: 46px; height: 46px;" src='.$row['images'].'
                        alt="">
                    <div class="create-name1 px-2 flex-grow-1" style="font-size: 14px;">'.$row['first_name'].$row['last_name'] .'<div
                        style="line-height: 0.8;">--</div>
