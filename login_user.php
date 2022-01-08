@@ -6,6 +6,11 @@
         }
 
        $_SESSION['id_user'];
+       
+       $urfLoginUser = "http://localhost/BTL/login_user.php?id=".$_SESSION['id_user'];
+       $urlmyNet = "http://localhost/BTL/login_mynetwork.php?id=".$_SESSION['id_user'];
+       $urlProfile = "http://localhost/BTL/profile.php?id=".$_SESSION['id_user'];
+
 ?>
 
     
