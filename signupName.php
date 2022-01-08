@@ -77,9 +77,9 @@
         <div class="row" style="  max-width: 1200px;
             margin: 0 auto;">
              <div class="text-left mt-5">
-                <div class="logo">
-                        <img src="./img/logo.png" alt="logo.png">
-                    </div>
+                 <a class="logo d-block"  href="index.php">
+                    <img src="./img/logo.png" alt="logo.png">
+                </a>
              </div>
 
             <form   method="post" class="p-4 rounded-10" style="max-width: 450px; height:500px; margin: 50px auto 20px;">

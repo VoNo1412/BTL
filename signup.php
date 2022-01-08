@@ -76,9 +76,9 @@
     <div class="container-fluid bg--primary">
         <div class="row pt-5">
              <div class="text-center">
-                <div class="logo">
-                        <img src="./img/logo.png" alt="logo.png">
-                    </div>
+                <a class="logo d-block" href="index.php">
+                    <img src="./img/logo.png" alt="logo.png">
+                </a>
                 <div class="fs-2 text-medium">Make the most of your professional life</div>
              </div>
 

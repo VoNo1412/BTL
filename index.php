@@ -17,7 +17,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container px-lg-7 py-2">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index.php">
         <img src="./img/logo.png" class="logo" alt="logo.png">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -33,7 +33,7 @@
               <path
                 d="M15.5 8.516a7.5 7.5 0 1 1-9.462-7.24A1 1 0 0 1 7 0h2a1 1 0 0 1 .962 1.276 7.503 7.503 0 0 1 5.538 7.24zm-3.61-3.905L6.94 7.439 4.11 12.39l4.95-2.828 2.828-4.95z" />
             </svg>
-            <a class="nav-link py-0" aria-current="page" href="discover.html">Discover</a>
+            <a class="nav-link py-0" aria-current="page" href="discover.php">Discover</a>
           </li>
           <li class="nav-item itemHover flexBox py-md-2 px-lg-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -62,7 +62,7 @@
               <path
                 d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" />
             </svg>
-            <a class="nav-link py-0 " href="#">Jobs</a>
+            <a class="nav-link py-0 " href="Job.php">Jobs</a>
           </li>
         </ul>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -86,7 +86,7 @@
           <div class="heading-lg color-heading fw-light">Welcome to your professional commnunity
           </div>
           <div class="w-6 w-md-8 w-sm-100 mt-lg-5 mt-md-3">
-            <a href="job.html" style="color: black; text-decoration: none;" class="border cursor rounded-4 p-3 d-flex justify-content-between my-3 cs-shadow">
+            <a href="job.php" style="color: black; text-decoration: none;" class="border cursor rounded-4 p-3 d-flex justify-content-between my-3 cs-shadow">
               <span class="fs-5">Search for a job</span>
               <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                   fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">

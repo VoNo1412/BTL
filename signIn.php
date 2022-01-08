@@ -79,9 +79,9 @@
 </head>
 <body>
     <div class="container-fluid bg--primary">
-        <div class="logo">
+        <a class="logo d-block" href="index.php">
             <img src="./img/logo.png" alt="logo.png">
-        </div>
+        </a>
         <div class="row">
             <form action="process_signIn.php"  method="post" class="p-4 rounded-10" style="max-width: 352px; height:420px; margin: 50px auto 20px;">
                 <div class="mb-3">

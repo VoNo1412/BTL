@@ -13,12 +13,13 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./CSS/style.css">
   <link rel="stylesheet" href="./CSS/user.css">
+  
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container px-lg-7 py-2">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index.php">
         <img src="./img/logo.png" class="logo" alt="logo.png">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
