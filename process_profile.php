@@ -22,9 +22,9 @@
         $result = mysqli_query($conn,$sql);
                         
         if($result) {
-            header("location:http://localhost/BTL/profile.php?id=4");
+            header("location:/BTL/profile.php?id=$id");
         } else {
-            header("location:http://localhost/BTL/signIn.php?id=4");
+            header("location:/BTL/signIn.php?id=$id");
         }
     
         // Bước 03: Đóng kết nối
