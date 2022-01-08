@@ -5,12 +5,9 @@
             header("location: signIn.php");
         }
 
-       $_SESSION['id_user'];
-       
        $urfLoginUser = "http://localhost/BTL/login_user.php?id=".$_SESSION['id_user'];
        $urlmyNet = "http://localhost/BTL/login_mynetwork.php?id=".$_SESSION['id_user'];
        $urlProfile = "http://localhost/BTL/profile.php?id=".$_SESSION['id_user'];
-
 ?>
 
     
@@ -146,7 +143,7 @@
 
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="border-right: 1px solid gainsboro; height: 50px;">
                         <li class="nav-item pe-3">
-                            <a class="nav-link text-center" href="login_user.php">
+                            <a class="nav-link text-center" href="<?php echo $urfLoginUser ?>">
                                 <div class="nav-icon">
                                     <i class="bi bi-house-fill"></i>
                                 </div>
@@ -154,7 +151,7 @@
                             </a>
                         </li>
                         <li class="nav-item pe-3">
-                            <a class="nav-link text-center" href="login_mynetwork.php">
+                            <a class="nav-link text-center" href="<?php echo $urlmyNet ?>">
                                 <div class="nav-icon">
                                     <i class="bi bi-people-fill"></i> 
                                 </div>
@@ -234,8 +231,10 @@
               <div class="profile-header " style="text-align: center; ">
                 <div class="bg-secondary" style="width: 100%; height: 60px;"></div>
                 <div class="bg-light">
+                <a href="<?php echo $urlProfile ?>">
                   <img src="<?php echo $_SESSION['img'] ?>" class="rounded-circle" id="profile-img"
                     style="width: 68px; height: 68px; transform: translateY(-50%);" alt="">
+                </a>
                 </div>
                 <div class="profile-name bg-light fw-bold text-capitalize">
                   <?php
