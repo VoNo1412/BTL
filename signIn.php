@@ -89,10 +89,10 @@
                     <span class="fs-14">Stay updated on your professional world</span> 
                 </div>
                 <div class="mb-3">
-                    <input type="email" name="txtEmail" class="form-control" placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" name="txtEmail"  require class="form-control" placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
-                    <input type="password" name="txtPass" class="form-control" placeholder="Password" id="exampleInputPassword1">
+                    <input type="password" name="txtPass" require  class="form-control" placeholder="Password" id="exampleInputPassword1">
                 </div>
                 <div class="fw-bold text-blue pb-3">Forget password?</div>
                 <?php

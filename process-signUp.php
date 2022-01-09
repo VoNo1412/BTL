@@ -53,11 +53,12 @@
 
         $result_1 = mysqli_query($conn, $sql_1);
 
+        $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
         if(mysqli_num_rows($result_1) > 0) {
             $error = "Email da duoc su dung. Vui long dang ky email khac!";
             header("location: signUp.php?error = $error");
         } else {
-            header("location: signupName.php?email=$email&password=$pass");
+            header("location: signupName.php?email=$email&password=$pass_hash");
         }
     } else {
         header("location: signUp.php");

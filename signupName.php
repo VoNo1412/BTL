@@ -87,11 +87,11 @@
                 <div class="mt-2">Already on LinkedIn? <a href="signin.php" class="fw-bold">Sign in</a></div></div>
             <div class="mb-3">
                 <label for="exampleInputFirstName" class="form-label text-gray fs-14">First Name</label>
-                <input type="text" name="txtFirstName" class="form-control" id="exampleInputFirstName">
+                <input type="text" name="txtFirstName" require class="form-control" id="exampleInputFirstName">
             </div>
             <div class="mb-3">
                 <label for="exampleInputLastName" class="form-label text-gray fs-14">Last Name</label>
-                <input type="text" name="txtLastName" class="form-control" id="exampleInputLastName">
+                <input type="text" name="txtLastName" require class="form-control" id="exampleInputLastName">
             </div>
             <div class="fs-12 text-gray text-center py-3">By clicking Agree & Join, you agree to the LinkedIn
                 <span class="text-blue fw-bold">User Agreement, Privacy Policy,</span> and 
@@ -111,10 +111,8 @@
                         die("Connect failure");
                     }
 
-                    $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
-
                     $sql_2 = "INSERT INTO db_user(email_user, password_user, first_name, last_name)
-                    VALUES('$email', '$pass_hash', '$firstName', '$lastName')";
+                    VALUES('$email', '$pass', '$firstName', '$lastName')";
                     $result_02 = mysqli_query($conn, $sql_2);
                   
                     if($result_02) {
