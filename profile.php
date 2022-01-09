@@ -1,9 +1,5 @@
 <?php 
-   session_start();
-
-   if(!isset($_SESSION['fullName'])) {
-       header("location: signIn.php");
-   }
+  require_once("checkLogin.php");
 ?>
 
 
@@ -151,7 +147,7 @@
             <nav class="navbar navbar-expand-lg pt-0 "
                 style="width: 1080px; margin: 0 auto; height: 53px;">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="login_user.php">
+                    <a class="navbar-brand" href="<?php echo $urfLoginUser ?>">
                         <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34"
                             viewBox="0 0 34 34" style="color: #3467c2">
                             <title>
@@ -181,7 +177,7 @@
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0"
                             style="border-right: 1px solid gainsboro; height: 50px;">
                             <li class="nav-item pe-3">
-                                <a class="nav-link text-center" href="login_user.php">
+                                <a class="nav-link text-center" href="<?php echo $urfLoginUser ?>">
                                     <div class="nav-icon">
                                         <i class="bi bi-house-fill"></i>
                                     </div>
@@ -215,7 +211,7 @@
                                 </a>
                             </li>
                             <li class="nav-item pe-2">
-                                <a class="nav-link text-center" href="login_notifications.php">
+                                <a class="nav-link text-center" href="<?php $urlNotifi ?>">
                                     <div class="nav-icon">
                                         <i class="bi bi-bell-fill"></i>
                                     </div>

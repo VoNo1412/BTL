@@ -141,15 +141,10 @@
 
   <div class="container">
     <div class="row px-5 mt-3">
-
       <div class="col-md-3" style="max-width: 250px;">
         <div class="side-bar" style="border: 1px solid gray;border-radius: 10px ;overflow: hidden;  ">
           <a class="nav-link " style="color: #000000E6;" aria-current="page" href="#"></i> Notifications</a>
           <a class="nav-link " style="color: #000000E6;" aria-current="page" href="#">You’re all caught up! Check back later for new notifications</a>
-          
-          
-          
-            
         </div>
         <button class="nav-link mt-2 " style="border: 1px solid blue;border-radius: 20px; width: 100%;"
           aria-current="page" href="#"><i class="bi bi-pencil-square"></i> Post a free job</button>
