@@ -1,3 +1,13 @@
+<?php 
+   session_start();
+
+   if(!isset($_SESSION['fullName'])) {
+       header("location: signIn.php");
+   }
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
