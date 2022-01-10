@@ -81,7 +81,7 @@
     </div>
 
     <div class="create-post" id="post-img" style="display: none;">
-      <form method="process_upload.php"  id="btnForm" method="post" enctype="multipart/form-data" class="px-3 pb-2 h-100">
+      <form action="process_upload.php"  id="btnForm" method="post" enctype="multipart/form-data" class="px-3 pb-2 h-100">
         <div class="create-content justify-content-space-between h-100" >
           <div class=" py-3 h5 d-flex mb-0">Edit your photo
             <div class="ms-auto Close text-black  cursor-pointer Close"><i class="bi bi-x-lg Close"></i></div>

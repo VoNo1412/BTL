@@ -1,36 +1,36 @@
 <?php 
     session_start();
     if(isset($_POST['btnImg'])) {
-        // $file = $_FILES['file'];
+        $file = $_FILES['file'];
 
-        // $fileName = $_FILES['file']['name'];
-        // $fileTmp = $_FILES['file']['tmp_name'];
-        // $fileSize = $_FILES['file']['size'];
-        // $fileError = $_FILES['file']['error'];
-        // $fileType = $_FILES['file']['type'];
+        $fileName = $_FILES['file']['name'];
+        $fileTmp = $_FILES['file']['tmp_name'];
+        $fileSize = $_FILES['file']['size'];
+        $fileError = $_FILES['file']['error'];
+        $fileType = $_FILES['file']['type'];
     
-        // $fileExt = explode(".", $fileName);
+        $fileExt = explode(".", $fileName);
 
-        // $fileActual = strtolower(end($fileExt));
-        // $allowd = array('jpg', 'png', 'jpeg', 'pdf');
-        // if(in_array($fileActual, $allowd)) {
-        //     if($fileError === 0) {
-        //         $fileNameNew = uniqid('', true).'.'.$fileActual;
-        //         $fileDestination = 'uploads/'.$fileNameNew;
-        //         move_uploaded_file($fileTmp, $fileDestination);
-        //         header("location: login_user.php?uploadSuccess");
-        //     } else {
-        //         echo "You can not upload img";
-        //     }
-        // } else {
-        //     echo "You can not upload img";
-        // }
-            echo "ABC";
+        $fileActual = strtolower(end($fileExt));
+        $allowd = array('jpg', 'png', 'jpeg', 'pdf');
+        if(in_array($fileActual, $allowd)) {
+            if($fileError === 0) {
+                $fileNameNew = uniqid('', true).'.'.$fileActual;
+                $fileDestination = 'uploads/'.$fileNameNew;
+                move_uploaded_file($fileTmp, $fileDestination);
+                header("location: index.php?img=$fileDestination");
+            } else {
+                echo "You can not upload img";
+            }
+        } else {
+            echo "You can not upload img";
+        }
+            // echo "ABC";
 
-        // $conn = mysqli_connect("localhost", "root", "", "btl");
-        // if(!$conn) {
-        //     die("Connect failure");
-        // }
+        $conn = mysqli_connect("localhost", "root", "", "btl");
+        if(!$conn) {
+            die("Connect failure");
+        }
 
         // $sql = "INSERT INTO db_post(id_user, text_post)
         //  VALUES ('$idUser','$txt_post')";
@@ -45,7 +45,8 @@
 
         // mysqli_close($conn);
     } else {
-        header("location: signIn.php");
+        echo "error";
     }
 
 ?>
+
