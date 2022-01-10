@@ -52,7 +52,7 @@
               name="txtPost";
               id="txtContent"></textarea>
               <div class="">
-                <img src="" alt="" class="takeImg">
+                <img src="" alt=""  class="takeImg">
               </div>
           </div>
           <hr class="mb-0">
@@ -81,7 +81,7 @@
     </div>
 
     <div class="create-post" id="post-img" style="display: none;">
-      <form  id="btnForm" method="post" enctype="multipart/form-data" class="px-3 pb-2 h-100">
+      <form method="process_upload.php"  id="btnForm" method="post" enctype="multipart/form-data" class="px-3 pb-2 h-100">
         <div class="create-content justify-content-space-between h-100" >
           <div class=" py-3 h5 d-flex mb-0">Edit your photo
             <div class="ms-auto Close text-black  cursor-pointer Close"><i class="bi bi-x-lg Close"></i></div>
@@ -96,7 +96,7 @@
             <button type="button" class="btn ms-auto me-2 border-primary text-primary btn-cancel border rounded-pill">
               Cancel
             </button>
-             <button class="btn btn-done border rounded-pill">Done</button>
+             <button type="submit" name="btnImg" class="btn btn-done border rounded-pill">Done</button>
           </div>
         </div>
       </form>
@@ -306,7 +306,7 @@
                     die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
                 }
                 // // Bước 02: Thực hiện truy vấn
-                $sql = "SELECT db_user.first_name, db_user.last_name, db_post.text_post, db_user.images 
+                $sql = "SELECT db_user.postIMG, db_user.first_name, db_user.last_name, db_post.text_post, db_user.images 
                 FROM db_user , db_post where db_user.id_user = db_post.id_user and db_user.id_user = '$id_user'";
             
                 $result = mysqli_query($conn,$sql);
@@ -342,6 +342,7 @@
                    
                    <div class="px-4 py-2" id="posted-desc">
                       '.$row['text_post'].'
+                      '.$row['postIMG'].'
                    </div>
            
                    <div class="menu-icon">
