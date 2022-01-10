@@ -18,19 +18,19 @@
                 $fileNameNew = uniqid('', true).'.'.$fileActual;
                 $fileDestination = 'uploads/'.$fileNameNew;
                 move_uploaded_file($fileTmp, $fileDestination);
-                header("location: index.php?img=$fileDestination");
+                header("location: login_user.php?img=$fileDestination");
             } else {
                 echo "You can not upload img";
             }
         } else {
             echo "You can not upload img";
         }
-            // echo "ABC";
-
-        $conn = mysqli_connect("localhost", "root", "", "btl");
-        if(!$conn) {
-            die("Connect failure");
-        }
+            echo "ABC";
+        
+        // $conn = mysqli_connect("localhost", "root", "", "btl");
+        // if(!$conn) {
+        //     die("Connect failure");
+        // }
 
         // $sql = "INSERT INTO db_post(id_user, text_post)
         //  VALUES ('$idUser','$txt_post')";
