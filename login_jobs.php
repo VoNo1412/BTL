@@ -184,40 +184,7 @@
    
     <div class="container">
         <div class="row px-5 mt-3">
-    
-          <div class="col-md-3" style="max-width: 250px;">
-            <div class="side-bar"style="border: 1px solid gray;border-radius: 10px ;overflow: hidden;  ">
-                <a class="nav-link " style="color: #000000E6;" aria-current="page" href="#"><i class="bi bi-bookmark-fill"style="color: #666;"></i>  My jobs</a>
-                <a class="nav-link " style="color: #000000E6;" aria-current="page" href="#"><i class="bi bi-bell-fill"style="color: #666;"></i>  Job Alerts</a>
-                <a class="nav-link " style="color: #000000E6;" aria-current="page" href="#"><i class="bi bi-cash"style="color: #666;"></i>  Salary</a>
-                <a class="nav-link " style="color: #000000E6;" aria-current="page" href="#"><i class="bi bi-clipboard-check"style="color: #666;"></i>  Skill Assessments</a>
-                <a class="nav-link " style="color: #000000E6;" aria-current="page" href="#"><i class="bi bi-file-earmark-text-fill"style="color: #666;"></i>  Interview Prep</a>
-                <a class="nav-link " style="color: #000000E6;" aria-current="page" href="#"><i class="bi bi-file-earmark"style="color: #666;"></i>  Resume Builder</a>
-                <a class="nav-link " style="color: #000000E6;" aria-current="page" href="#"><i class="bi bi-youtube"style="color: #666;"></i>  Job Seeker Guidance</a>
-                <a class="nav-link " style="color: #000000E6;" aria-current="page" href="#"><i class="bi bi-gear-fill"style="color: #666;"></i></i>  Application Settings</a>
-            </div>
-            <button class="nav-link mt-2 " style="border: 1px solid blue;border-radius: 20px; width: 100%;" aria-current="page" href="#"><i class="bi bi-pencil-square"></i>  Post a free job</button>
-        </div>
-          
-    
-          <div class="col-md-6">
-            <div class="content-header bg-light"style="border: 1px solid black;  border-radius: 10px; overflow: hidden;">
-                <div>Suggested job searches</div>
-                <button class="nav-link mt-2 " style="border: 1px solid blue;border-radius: 30px; " aria-current="page" href="#"><i class="bi bi-search"></i></i>  marketing manager</button>
-                <button class="nav-link mt-2 " style="border: 1px solid blue;border-radius: 30px; " aria-current="page" href="#"><i class="bi bi-search"></i></i>  hr</button>
-                <button class="nav-link mt-2 " style="border: 1px solid blue;border-radius: 30px; " aria-current="page" href="#"><i class="bi bi-search"></i></i>  legal</button>
-                <button class="nav-link mt-2 " style="border: 1px solid blue;border-radius: 30px; " aria-current="page" href="#"><i class="bi bi-search"></i></i>  sales</button>
-                <button class="nav-link mt-2 " style="border: 1px solid blue;border-radius: 30px; " aria-current="page" href="#"><i class="bi bi-search"></i></i>  amazon</button>
-                <button class="nav-link mt-2 " style="border: 1px solid blue;border-radius: 30px; " aria-current="page" href="#"><i class="bi bi-search"></i></i>  google</button>
-                <button class="nav-link mt-2 " style="border: 1px solid blue;border-radius: 30px; " aria-current="page" href="#"><i class="bi bi-search"></i></i>  analyst</button> 
-            </div>
-
-            
-            <div>
-              <div>Try Premium to see jobs where you would be a top applicant</div>
-            </div>
-            
-          </div>
+ 
         </div>
         <div class="footer">
           <div style=" margin: 8px 1px;text-decoration: 1px solid blue;">
