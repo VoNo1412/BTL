@@ -81,7 +81,7 @@
     </div>
 
     <div class="create-post" id="post-img" style="display: none;">
-      <form action="process_upload.php"  id="btnForm" method="post" enctype="multipart/form-data" class="px-3 pb-2 h-100">
+    <form action="process_upload.php"  id="btnForm" method="post" enctype="multipart/form-data" class="px-3 pb-2 h-100">
         <div class="create-content justify-content-space-between h-100" >
           <div class=" py-3 h5 d-flex mb-0">Edit your photo
             <div class="ms-auto Close text-black  cursor-pointer Close"><i class="bi bi-x-lg Close"></i></div>
@@ -99,7 +99,7 @@
              <button type="submit" name="btnImg" class="btn btn-done border rounded-pill">Done</button>
           </div>
         </div>
-      </form>
+    </form>
     </div>
 
     <div class="overflow" style="display: none;"></div>
