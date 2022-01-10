@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 06, 2022 lúc 02:25 PM
+-- Thời gian đã tạo: Th1 10, 2022 lúc 02:21 PM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 8.0.14
 
@@ -59,7 +59,15 @@ CREATE TABLE `db_post` (
 --
 
 INSERT INTO `db_post` (`id_user`, `id_post`, `text_post`, `img_post`) VALUES
-(1, 7, 'How you can do it ? everything', NULL);
+(1, 19, '', NULL),
+(3, 20, 'sad', NULL),
+(7, 21, 'sad', NULL),
+(7, 22, 'push', NULL),
+(7, 23, 'sad', NULL),
+(7, 24, 'sad', NULL),
+(1, 25, 'how are you ', NULL),
+(1, 26, 'sad', NULL),
+(1, 27, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -73,16 +81,25 @@ CREATE TABLE `db_user` (
   `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password_user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `images` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL
+  `images` varchar(5000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `addr` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `education` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `postIMG` varchar(5000) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `db_user`
 --
 
-INSERT INTO `db_user` (`id_user`, `first_name`, `last_name`, `email_user`, `password_user`, `images`) VALUES
-(1, 'Vo', 'nO', 'savitar@gmail.com', '$2y$10$IyHyBDrgfDookUA1hMMW4eKPhhTdFDrR6huykYfXL6ynuNr7bJaE2', 'https://images.unsplash.com/photo-1641305286508-f8f2d31f04dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'),
-(2, 'liem', 'vv', 'liemvv@gmail.com', '$2y$10$8EAcOnpTiYHlV/gji0miieg6hqZgzxK9lUAiG5pQyESk7DhptAWc6', '');
+INSERT INTO `db_user` (`id_user`, `first_name`, `last_name`, `email_user`, `password_user`, `images`, `addr`, `city`, `education`, `postIMG`) VALUES
+(1, 'Liem', 'nO', 'savitar@gmail.com', '$2y$10$IyHyBDrgfDookUA1hMMW4eKPhhTdFDrR6huykYfXL6ynuNr7bJaE2', 'https://images.unsplash.com/photo-1641305286508-f8f2d31f04dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60', 'Viet Nam', 'Ha Noi', 'Truong Dai Hoc Thuy Loi', NULL),
+(2, 'liem', 'vv', 'liemvv@gmail.com', '$2y$10$8EAcOnpTiYHlV/gji0miieg6hqZgzxK9lUAiG5pQyESk7DhptAWc6', '', NULL, NULL, NULL, NULL),
+(3, 'Vo', 'nO', 'a@gmail.com', '$2y$10$4W7uwoOjwcbmMg9LQseQF.dhcFp9WvtzJPDgiKmtXHDl8MkWEWjM2', '', NULL, NULL, NULL, NULL),
+(4, 'liemvv hận đời', 'đối', 'moriOn@gmail.com', '$2y$10$ddCoXQKfQbM9d0zmR4bDc.yreSq45LdZQH624LrOvo.HGBXBvAFHS', '', 'Viet Nam', 'Thai Binh MO HO ROI', 'TLU', NULL),
+(5, 'Vo', 'nO', 'thresh@gmail.com', '', '', NULL, NULL, NULL, NULL),
+(6, 'yauso', 'vono', 'yasuo@gmail.com', '$2y$10$pP1edBh69evzjTYqUn2oyO6GX/AzrVP4yBzjqYsw5wJfVy52V7Wuq', '', NULL, NULL, NULL, NULL),
+(7, 'Lucian', 'nO', 'lucian@gmail.com', '$2y$10$L7aBZL6VGA3i3mrM1bB65Of49voqYf51/n3X6UkfDcPPvu/51oPbm', '', '', '', '', NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -122,13 +139,13 @@ ALTER TABLE `db_job`
 -- AUTO_INCREMENT cho bảng `db_post`
 --
 ALTER TABLE `db_post`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT cho bảng `db_user`
 --
 ALTER TABLE `db_user`
-  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
