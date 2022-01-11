@@ -192,16 +192,14 @@
                                     <div class="nav-context">My Network</div>
                                 </a>
                             </li>
-                            <form class="nav-item pe-3">
-                                <a class="nav-link text-center" href="login_jobs.php">
-                                    <div class="nav-icon">
-                                        <i class="bi bi-briefcase-fill"></i>
-                                    </div>
-                                    <input class="nav-context" name="btnJob"
-                                        style="border: none; background: none;" value="Job"
-                                        type="submit">
-                                </a>
-                            </form>
+                            <div  class="nav-item pe-3">
+                          <a class="nav-link text-center" href="login_jobs.php">
+                              <div class="nav-icon">
+                                  <i class="bi bi-briefcase-fill"></i>
+                              </div>
+                              <div class="nav-context">Job</div>
+                          </a>
+                      </div>
                             <li class="nav-item pe-3">
                                 <a class="nav-link text-center" href="#">
                                     <div class="nav-icon">
@@ -211,7 +209,7 @@
                                 </a>
                             </li>
                             <li class="nav-item pe-2">
-                                <a class="nav-link text-center" href="<?php $urlNotifi ?>">
+                                <a class="nav-link text-center" href="login_notifications.php">
                                     <div class="nav-icon">
                                         <i class="bi bi-bell-fill"></i>
                                     </div>

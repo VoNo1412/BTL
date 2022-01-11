@@ -9,4 +9,5 @@
        $urlmyNet = "/BTL/login_mynetwork.php?id=".$_SESSION['id_user'];
        $urlProfile = "/BTL/profile.php?id=".$_SESSION['id_user'];
        $urlNotifi = "/BTL/login_notifications.php?id=".$_SESSION['id_user'];
+       
 ?>

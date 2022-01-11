@@ -65,21 +65,21 @@
                           </a>
                       </li>
                       <li class="nav-item pe-3">
-                          <a class="nav-link text-center" href="login_mynetwork.php">
+                          <a class="nav-link text-center" href="<?php echo $urlmyNet ?>">
                               <div class="nav-icon">
                                   <i class="bi bi-people-fill"></i> 
                               </div>
                               <div class="nav-context">My Network</div>
                           </a>
                       </li>
-                      <form  class="nav-item pe-3">
+                      <div  class="nav-item pe-3">
                           <a class="nav-link text-center" href="login_jobs.php">
                               <div class="nav-icon">
                                   <i class="bi bi-briefcase-fill"></i>
                               </div>
-                              <input class="nav-context" name="btnJob" style="border: none; background: none;" value="Job" type="submit">
+                              <div class="nav-context">Job</div>
                           </a>
-                      </form>
+                      </div>
                       <li class="nav-item pe-3">
                           <a class="nav-link text-center" href="#">
                               <div class="nav-icon">
@@ -89,7 +89,7 @@
                           </a>
                       </li>
                       <li class="nav-item pe-2">
-                          <a class="nav-link text-center" href="login_notifications.php">
+                          <a class="nav-link text-center" href="<?php echo $urlNotifi ?>">
                               <div class="nav-icon">
                                   <i class="bi bi-bell-fill"></i> 
                               </div>
