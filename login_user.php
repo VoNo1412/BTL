@@ -52,8 +52,6 @@
               name="txtPost";
               id="txtContent"></textarea>
               <div class="Epan">
-              <?php echo "<input name='postIMG' id='postIMG' class='d-none' value=''>" ?>
-  
                 <img src="" alt=""  class="takeImg">
               </div>
           </div>
@@ -90,7 +88,7 @@
           </div>
           <hr style="margin-top: 0;">
           <div class="create-status">
-            <input type="file" name="file"  class="photo py-2">
+            <input type="file" name="file" class="photo py-2">
             <img src="" alt="" class="display_img" accept="image/png, image/jpg">
           </div>
           <hr>
@@ -98,7 +96,7 @@
             <button type="button" class="btn ms-auto me-2 border-primary text-primary btn-cancel border rounded-pill">
               Cancel
             </button>
-             <button type="submit" name="btnImg" class="btn border rounded-pill">Done</button>
+             <button type="submit" name="btnImg" class="btn btn-done border rounded-pill">Done</button>
           </div>
         </div>
     </form>
