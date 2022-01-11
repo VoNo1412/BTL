@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 10, 2022 lúc 02:21 PM
--- Phiên bản máy phục vụ: 10.4.22-MariaDB
--- Phiên bản PHP: 8.0.14
+-- Thời gian đã tạo: Th1 11, 2022 lúc 10:04 AM
+-- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Phiên bản PHP: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,11 @@ CREATE TABLE `db_job` (
 --
 
 INSERT INTO `db_job` (`id_user`, `id_job`, `address_job`, `post_job`) VALUES
-(1, 1, 'Pizza Hut Việt Nam Hanoi, Hanoi, Vietnam', 'Success Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut eligendi id fugiat deserunt. Possimus explicabo non maiores adipisci dolore ducimus voluptatem odio, tempora ex excepturi expedita aut assumenda dolorum, veritatis dicta similique et sint culpa a. Magni, adipisci. A dolorem quasi dicta laudantium? Distinctio molestiae dolor ipsa, ullam eveniet voluptatibus quisquam recusandae, dicta voluptate harum magni placeat amet blanditiis animi! Ratione architecto asperiores voluptate labore, nostrum enim cumque? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis temporibus asperiores consequuntur. Voluptates, tenetur, quod voluptas similique aliquam eum expedita neque dolorem nemo velit delectus voluptatum accusantium non obcaecati culpa qui? Atque, molestias? Placeat perspiciatis inventore at molestias voluptates iste maiores sed cupiditate minima reiciendis illum, consequuntur quaerat accusantium incidunt molestiae illo dolorem necessitatibus voluptatem aliquid temporibus rem ea? Aliquid vel quaerat dicta quidem, aspernatur ratione debitis animi id! A debitis, magnam nisi nostrum laudantium molestiae voluptates non facere. Atque rerum quod aliquam ea officia itaque expedita, perspiciatis aspernatur. Maiores ipsa sed vel ea rem. Cum culpa pariatur corrupti molestias.');
+(1, 1, 'Pizza Hut Việt Nam Hanoi, Hanoi, Vietnam', 'Success Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet aut eligendi id fugiat deserunt. Possimus explicabo non maiores adipisci dolore ducimus voluptatem odio, tempora ex excepturi expedita aut assumenda dolorum, veritatis dicta similique et sint culpa a. Magni, adipisci. A dolorem quasi dicta laudantium? Distinctio molestiae dolor ipsa, ullam eveniet voluptatibus quisquam recusandae, dicta voluptate harum magni placeat amet blanditiis animi! Ratione architecto asperiores voluptate labore, nostrum enim cumque? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis temporibus asperiores consequuntur. Voluptates, tenetur, quod voluptas similique aliquam eum expedita neque dolorem nemo velit delectus voluptatum accusantium non obcaecati culpa qui? Atque, molestias? Placeat perspiciatis inventore at molestias voluptates iste maiores sed cupiditate minima reiciendis illum, consequuntur quaerat accusantium incidunt molestiae illo dolorem necessitatibus voluptatem aliquid temporibus rem ea? Aliquid vel quaerat dicta quidem, aspernatur ratione debitis animi id! A debitis, magnam nisi nostrum laudantium molestiae voluptates non facere. Atque rerum quod aliquam ea officia itaque expedita, perspiciatis aspernatur. Maiores ipsa sed vel ea rem. Cum culpa pariatur corrupti molestias.'),
+(2, 3, 'Hanoi, Vietnam', '[Hải Phát Land] Nhân Viên Kinh Doanh Bất Động Sản (Lương Cứng + Hỗ Trợ Mkt + Hoa Hồng Tới 200 Triệu / Giao Dịch)'),
+(3, 4, 'Đà Nẵng', 'Trưởng Phòng Kinh Doanh Bất Động Sản (Lương Cứng Tới 40 Triệu + Hoa Hồng)'),
+(4, 5, 'Thái Bình', 'Nhân Viên Dự Án BĐS Vinhomes Smart City, Vinhomes Ocean Park'),
+(6, 6, 'Thái Bình', 'Nhân Viên Kinh Doanh Bất Động Sản Tài Chính Lương Trên 10 Triệu');
 
 -- --------------------------------------------------------
 
@@ -50,24 +54,17 @@ INSERT INTO `db_job` (`id_user`, `id_job`, `address_job`, `post_job`) VALUES
 CREATE TABLE `db_post` (
   `id_user` int(10) UNSIGNED NOT NULL,
   `id_post` int(11) NOT NULL,
-  `text_post` varchar(5000) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img_post` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `text_post` varchar(5000) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `db_post`
 --
 
-INSERT INTO `db_post` (`id_user`, `id_post`, `text_post`, `img_post`) VALUES
-(1, 19, '', NULL),
-(3, 20, 'sad', NULL),
-(7, 21, 'sad', NULL),
-(7, 22, 'push', NULL),
-(7, 23, 'sad', NULL),
-(7, 24, 'sad', NULL),
-(1, 25, 'how are you ', NULL),
-(1, 26, 'sad', NULL),
-(1, 27, '', NULL);
+INSERT INTO `db_post` (`id_user`, `id_post`, `text_post`) VALUES
+(1, 19, 'hôm nay là một ngày đẹp trời'),
+(3, 20, 'xin chào các bạn hhihi .'),
+(3, 29, 'hello world');
 
 -- --------------------------------------------------------
 
@@ -84,22 +81,20 @@ CREATE TABLE `db_user` (
   `images` varchar(5000) COLLATE utf8mb4_unicode_ci NOT NULL,
   `addr` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `education` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `postIMG` varchar(5000) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `education` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `db_user`
 --
 
-INSERT INTO `db_user` (`id_user`, `first_name`, `last_name`, `email_user`, `password_user`, `images`, `addr`, `city`, `education`, `postIMG`) VALUES
-(1, 'Liem', 'nO', 'savitar@gmail.com', '$2y$10$IyHyBDrgfDookUA1hMMW4eKPhhTdFDrR6huykYfXL6ynuNr7bJaE2', 'https://images.unsplash.com/photo-1641305286508-f8f2d31f04dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60', 'Viet Nam', 'Ha Noi', 'Truong Dai Hoc Thuy Loi', NULL),
-(2, 'liem', 'vv', 'liemvv@gmail.com', '$2y$10$8EAcOnpTiYHlV/gji0miieg6hqZgzxK9lUAiG5pQyESk7DhptAWc6', '', NULL, NULL, NULL, NULL),
-(3, 'Vo', 'nO', 'a@gmail.com', '$2y$10$4W7uwoOjwcbmMg9LQseQF.dhcFp9WvtzJPDgiKmtXHDl8MkWEWjM2', '', NULL, NULL, NULL, NULL),
-(4, 'liemvv hận đời', 'đối', 'moriOn@gmail.com', '$2y$10$ddCoXQKfQbM9d0zmR4bDc.yreSq45LdZQH624LrOvo.HGBXBvAFHS', '', 'Viet Nam', 'Thai Binh MO HO ROI', 'TLU', NULL),
-(5, 'Vo', 'nO', 'thresh@gmail.com', '', '', NULL, NULL, NULL, NULL),
-(6, 'yauso', 'vono', 'yasuo@gmail.com', '$2y$10$pP1edBh69evzjTYqUn2oyO6GX/AzrVP4yBzjqYsw5wJfVy52V7Wuq', '', NULL, NULL, NULL, NULL),
-(7, 'Lucian', 'nO', 'lucian@gmail.com', '$2y$10$L7aBZL6VGA3i3mrM1bB65Of49voqYf51/n3X6UkfDcPPvu/51oPbm', '', '', '', '', NULL);
+INSERT INTO `db_user` (`id_user`, `first_name`, `last_name`, `email_user`, `password_user`, `images`, `addr`, `city`, `education`) VALUES
+(1, 'Nguyễn Thị', 'Ánh Nhung', 'savitar@gmail.com', '$2y$10$IyHyBDrgfDookUA1hMMW4eKPhhTdFDrR6huykYfXL6ynuNr7bJaE2', 'https://images.unsplash.com/photo-1641305286508-f8f2d31f04dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60', 'Việt Nam', 'Ha Noi', 'TLU'),
+(2, 'Bùi Đức', 'Liêm', 'liemvv@gmail.com', '$2y$10$8EAcOnpTiYHlV/gji0miieg6hqZgzxK9lUAiG5pQyESk7DhptAWc6', 'https://images.unsplash.com/photo-1640622659613-26d7d08893e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60', 'Việt Nam', 'Thái Bình', 'TLU'),
+(3, 'Nguyễn Quốc', 'Bình', 'a@gmail.com', '$2y$10$4W7uwoOjwcbmMg9LQseQF.dhcFp9WvtzJPDgiKmtXHDl8MkWEWjM2', 'https://images.unsplash.com/photo-1593642634524-b40b5baae6bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60', 'Việt Nam', 'Thái Bình', 'TLU'),
+(4, 'Nguyễn Thị', 'Hoài', 'moriOn@gmail.com', '$2y$10$ddCoXQKfQbM9d0zmR4bDc.yreSq45LdZQH624LrOvo.HGBXBvAFHS', 'https://images.unsplash.com/photo-1641810780702-57d275dfdc59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60', 'Việt Nam', 'Hà Nam', 'TLU'),
+(6, 'Vũ Xuân', 'Toàn', 'yasuo@gmail.com', '$2y$10$pP1edBh69evzjTYqUn2oyO6GX/AzrVP4yBzjqYsw5wJfVy52V7Wuq', 'https://images.unsplash.com/photo-1641763088361-de374d8a1b8d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1N3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60', 'Việt Nam', 'Hải Dương', 'TLU'),
+(7, 'Đỗ Văn', 'Thấp', 'lucian@gmail.com', '$2y$10$L7aBZL6VGA3i3mrM1bB65Of49voqYf51/n3X6UkfDcPPvu/51oPbm', 'https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw3MHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60', 'Việt Nam', 'Huế', 'TLU');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -133,13 +128,13 @@ ALTER TABLE `db_user`
 -- AUTO_INCREMENT cho bảng `db_job`
 --
 ALTER TABLE `db_job`
-  MODIFY `id_job` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_job` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `db_post`
 --
 ALTER TABLE `db_post`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT cho bảng `db_user`
