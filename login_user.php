@@ -51,7 +51,9 @@
               placeholder="What do you want to talk about?" style="border: none; overflow: hidden;"
               name="txtPost";
               id="txtContent"></textarea>
-              <div class="">
+              <div class="Epan">
+              <?php echo "<input name='postIMG' id='postIMG' class='d-none' value=''>" ?>
+  
                 <img src="" alt=""  class="takeImg">
               </div>
           </div>
@@ -81,7 +83,7 @@
     </div>
 
     <div class="create-post" id="post-img" style="display: none;">
-    <form action="process_upload.php"  id="btnForm" method="post" enctype="multipart/form-data" class="px-3 pb-2 h-100">
+    <form  id="btnForm" method="post" enctype="multipart/form-data" class="px-3 pb-2 h-100">
         <div class="create-content justify-content-space-between h-100" >
           <div class=" py-3 h5 d-flex mb-0">Edit your photo
             <div class="ms-auto Close text-black  cursor-pointer Close"><i class="bi bi-x-lg Close"></i></div>
@@ -96,7 +98,7 @@
             <button type="button" class="btn ms-auto me-2 border-primary text-primary btn-cancel border rounded-pill">
               Cancel
             </button>
-             <button type="submit" name="btnImg" class="btn btn-done border rounded-pill">Done</button>
+             <button type="submit" name="btnImg" class="btn btn-done  border rounded-pill">Done</button>
           </div>
         </div>
     </form>

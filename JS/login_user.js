@@ -13,18 +13,30 @@ const postImg = document.querySelector("#post-img");
 const photo = document.querySelector(".photo");
 const btnPhoto = document.querySelector(".btnPhoto");
 const takeImg = document.querySelector(".takeImg");
+// const postIMG = document.querySelector("#postIMG");
 var upload_img = "";
 
-photo.addEventListener("change", function() {
-    const reader = new FileReader();
-    reader.addEventListener("load", () => {
-        upload_img = reader.result;
-        document.querySelector(".display_img").src = upload_img;
-        postImg.style.height = "auto";
-    })
-    reader.readAsDataURL(this.files[0]);
-    photo.style.display = "none";
+// photo.addEventListener("change", function() {
+//     const reader = new FileReader();
+//     reader.addEventListener("load", () => {
+//         upload_img = reader.result;
+//         document.querySelector(".display_img").src = upload_img;
+//         postImg.style.height = "auto";
+//     })
+//     reader.readAsDataURL(this.files[0]);
+//     console.log(reader);
+//     photo.style.display = "none";
+// });
+
+document.querySelector("#btnForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    // const endPoint = "process_upload.php";
+    const formData = new FormData();
+    console.log(photo.files[0]);
+    formData.append("file", photo.files[0]);
+
 })
+
 
 class Post_P1 {
     constructor(img, name) {
@@ -65,7 +77,7 @@ function handlyImg(eventS) {
     } else if (eventS.className == "overflow" || eventS.parentElement.classList.contains("Close")) {
         postImg.style.display = "none";
         overflow.style.display = "none";
-        document.querySelector(".display_img").src = "";
+        // document.querySelector(".display_img").src = "";
     }
 }
 
@@ -106,6 +118,12 @@ function stopLoading() {
         postEl.getElementsByClassName("loading")[0].remove();
     }, 600);
 }
+
+
+
+
+
+
 
 // function loadingPost() {
 //     let post = new Post(img_user, txtName, txtContent);
@@ -233,14 +251,12 @@ btnPhoto.addEventListener("click", () => {
 function nonePhoto() {
     postImg.style.display = "none";
     overflow.style.display = "none";
-    displayPhoto.src = "";
 }
 
 btnPost.addEventListener("click", () => {
     loading();
     stopLoading();
     loadingPost();
-    displayPhoto.src = "";
 });
 
 
