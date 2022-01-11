@@ -98,7 +98,7 @@
             <button type="button" class="btn ms-auto me-2 border-primary text-primary btn-cancel border rounded-pill">
               Cancel
             </button>
-             <button type="submit" name="btnImg" class="btn btn-done  border rounded-pill">Done</button>
+             <button type="submit" name="btnImg" class="btn border rounded-pill">Done</button>
           </div>
         </div>
     </form>
