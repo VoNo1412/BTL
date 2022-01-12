@@ -304,7 +304,7 @@
                     die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
                 }
                 // // Bước 02: Thực hiện truy vấn
-                $sql = "SELECT db_user.postIMG, db_user.first_name, db_user.last_name, db_post.text_post, db_user.images 
+                $sql = "SELECT  db_user.first_name, db_user.last_name, db_post.text_post, db_user.images 
                 FROM db_user , db_post where db_user.id_user = db_post.id_user and db_user.id_user = '$id_user'";
             
                 $result = mysqli_query($conn,$sql);
@@ -340,7 +340,6 @@
                    
                    <div class="px-4 py-2" id="posted-desc">
                       '.$row['text_post'].'
-                      '.$row['postIMG'].'
                    </div>
            
                    <div class="menu-icon">
